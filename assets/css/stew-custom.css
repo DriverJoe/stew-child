@@ -1,0 +1,1254 @@
+/**
+ * STEW Custom Styles
+ * Swiss-minimal design for professional LED lighting webshop
+ * Inspired by Flos, Artemide, Erco aesthetics
+ */
+
+/* ============================================
+   CSS Custom Properties
+   ============================================ */
+:root {
+    /* Core palette */
+    --stew-white: #FFFFFF;
+    --stew-off-white: #F8F8F8;
+    --stew-card-bg: #FDFCFA;
+    --stew-muted-bg: #F5F5F2;
+    --stew-border: #E8E5E0;
+    --stew-text: #1A1A1A;
+    --stew-text-muted: #737373;
+    --stew-primary: hsl(38, 80%, 50%);
+    --stew-primary-soft: hsl(38, 60%, 95%);
+    --stew-primary-dark: hsl(38, 80%, 40%);
+    --stew-dark: #1A1A1A;
+    --stew-dark-lighter: #2A2A2A;
+    --stew-badge-soldout: #F5F5F0;
+    --stew-success: #4A7C59;
+    --stew-error: #C53030;
+
+    /* Typography */
+    --stew-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --stew-letter-spacing-wide: 0.1em;
+    --stew-letter-spacing-tight: -0.02em;
+
+    /* Spacing */
+    --stew-section-padding: 80px;
+    --stew-section-padding-mobile: 48px;
+    --stew-container-max: 1280px;
+    --stew-radius: 2px;
+
+    /* Transitions */
+    --stew-transition: all 0.3s ease;
+    --stew-transition-slow: all 0.5s ease;
+}
+
+/* ============================================
+   Font Import
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   Base / Typography
+   ============================================ */
+body.stew-theme {
+    font-family: var(--stew-font);
+    color: var(--stew-text);
+    background-color: var(--stew-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+}
+
+.stew-theme h1,
+.stew-theme h2,
+.stew-theme h3,
+.stew-theme h4,
+.stew-theme h5,
+.stew-theme h6 {
+    font-family: var(--stew-font);
+    font-weight: 600;
+    letter-spacing: var(--stew-letter-spacing-tight);
+    color: var(--stew-text);
+    line-height: 1.2;
+}
+
+.stew-section-heading {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--stew-letter-spacing-wide);
+    color: var(--stew-text-muted);
+    margin-bottom: 2rem;
+}
+
+.stew-section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .stew-section-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* ============================================
+   Layout / Container
+   ============================================ */
+.stew-container {
+    max-width: var(--stew-container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.stew-section {
+    padding: var(--stew-section-padding-mobile) 0;
+}
+
+@media (min-width: 768px) {
+    .stew-section {
+        padding: var(--stew-section-padding) 0;
+    }
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.stew-btn,
+.stew-theme .button,
+.stew-theme .woocommerce a.button,
+.stew-theme .woocommerce button.button,
+.stew-theme .woocommerce input.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--stew-font);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: var(--stew-transition);
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.stew-btn--primary,
+.stew-theme .woocommerce a.button.alt,
+.stew-theme .woocommerce button.button.alt,
+.stew-theme .woocommerce input.button.alt {
+    background-color: var(--stew-dark);
+    color: var(--stew-white);
+}
+
+.stew-btn--primary:hover,
+.stew-theme .woocommerce a.button.alt:hover,
+.stew-theme .woocommerce button.button.alt:hover,
+.stew-theme .woocommerce input.button.alt:hover {
+    background-color: var(--stew-dark-lighter);
+    color: var(--stew-white);
+}
+
+.stew-btn--outline {
+    background-color: transparent;
+    color: var(--stew-text);
+    border: 1px solid var(--stew-border);
+}
+
+.stew-btn--outline:hover {
+    border-color: var(--stew-text);
+}
+
+.stew-btn--gold {
+    background-color: var(--stew-primary);
+    color: var(--stew-white);
+}
+
+.stew-btn--gold:hover {
+    background-color: var(--stew-primary-dark);
+}
+
+/* ============================================
+   Navigation / Header
+   ============================================ */
+.stew-theme #header-outer {
+    background-color: var(--stew-white) !important;
+    border-bottom: 1px solid var(--stew-border);
+    box-shadow: none !important;
+}
+
+.stew-theme #header-outer[data-transparent-header="true"] {
+    background-color: transparent !important;
+    border-bottom: none;
+}
+
+.stew-theme #header-outer .nav-menu > li > a {
+    font-family: var(--stew-font);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--stew-text);
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+}
+
+.stew-theme #header-outer .nav-menu > li > a:hover {
+    color: var(--stew-primary);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.stew-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.stew-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.stew-hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--stew-white);
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.stew-hero__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: var(--stew-letter-spacing-tight);
+    margin-bottom: 1.5rem;
+    color: var(--stew-white);
+    line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+    .stew-hero__title {
+        font-size: 3.5rem;
+    }
+}
+
+.stew-hero__subtitle {
+    font-size: 1.125rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* ============================================
+   Category Cards
+   ============================================ */
+.stew-categories {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .stew-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .stew-categories {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.stew-category-card {
+    display: block;
+    background: var(--stew-card-bg);
+    border: 1px solid var(--stew-border);
+    border-radius: var(--stew-radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--stew-text);
+    transition: var(--stew-transition);
+}
+
+.stew-category-card:hover {
+    border-color: rgba(201, 169, 110, 0.3);
+}
+
+.stew-category-card__image {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--stew-muted-bg);
+}
+
+.stew-category-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.stew-category-card:hover .stew-category-card__image img {
+    transform: scale(1.05);
+}
+
+.stew-category-card__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.stew-category-card__name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.stew-category-card:hover .stew-category-card__name {
+    color: var(--stew-primary);
+}
+
+.stew-category-card__arrow {
+    width: 1rem;
+    height: 1rem;
+    color: var(--stew-text-muted);
+    transition: var(--stew-transition);
+}
+
+.stew-category-card:hover .stew-category-card__arrow {
+    color: var(--stew-primary);
+    transform: translateX(4px);
+}
+
+/* ============================================
+   Product Cards (WooCommerce)
+   ============================================ */
+.stew-theme .products,
+.stew-product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 640px) {
+    .stew-theme .products,
+    .stew-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .stew-theme .products,
+    .stew-product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.stew-product-card,
+.stew-theme ul.products li.product {
+    background: var(--stew-card-bg);
+    border-radius: var(--stew-radius);
+    overflow: hidden;
+    transition: var(--stew-transition);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.stew-product-card:hover,
+.stew-theme ul.products li.product:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.stew-product-card__image,
+.stew-theme ul.products li.product .attachment-woocommerce_thumbnail {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: transform 0.5s ease-out;
+}
+
+.stew-product-card:hover .stew-product-card__image,
+.stew-theme ul.products li.product:hover .attachment-woocommerce_thumbnail {
+    transform: scale(1.03);
+}
+
+.stew-product-card__image-wrap {
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1;
+    background: var(--stew-muted-bg);
+}
+
+.stew-product-card__info {
+    padding: 1rem;
+}
+
+.stew-product-card__name,
+.stew-theme ul.products li.product .woocommerce-loop-product__title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    color: var(--stew-text);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.2s ease;
+}
+
+.stew-product-card:hover .stew-product-card__name,
+.stew-theme ul.products li.product:hover .woocommerce-loop-product__title {
+    color: var(--stew-primary);
+}
+
+.stew-product-card__price,
+.stew-theme ul.products li.product .price {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--stew-text);
+}
+
+/* Badges */
+.stew-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--stew-radius);
+    z-index: 2;
+}
+
+.stew-badge--soldout {
+    background-color: var(--stew-badge-soldout);
+    color: var(--stew-text-muted);
+}
+
+.stew-badge--new {
+    background-color: var(--stew-primary);
+    color: var(--stew-white);
+}
+
+.stew-theme .woocommerce span.onsale {
+    background-color: var(--stew-primary);
+    color: var(--stew-white);
+    border-radius: var(--stew-radius);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    min-height: auto;
+    min-width: auto;
+    line-height: 1.4;
+}
+
+/* Price on request */
+.stew-price-inquiry {
+    color: var(--stew-primary);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+/* ============================================
+   Product Archive / Shop Page
+   ============================================ */
+.stew-shop-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .stew-shop-layout {
+        grid-template-columns: 280px 1fr;
+    }
+}
+
+.stew-shop-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--stew-border);
+    margin-bottom: 1.5rem;
+}
+
+.stew-shop-topbar__count {
+    font-size: 0.875rem;
+    color: var(--stew-text-muted);
+}
+
+.stew-shop-topbar__sort {
+    font-size: 0.875rem;
+}
+
+.stew-shop-topbar__sort .orderby {
+    font-family: var(--stew-font);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--stew-border);
+    border-radius: var(--stew-radius);
+    background: var(--stew-white);
+    font-size: 0.875rem;
+}
+
+/* Filter Sidebar */
+.stew-filter-sidebar {
+    padding: 1.5rem;
+    background: var(--stew-off-white);
+    border-radius: var(--stew-radius);
+}
+
+.stew-filter-sidebar h3,
+.stew-filter-sidebar .facetwp-facet-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--stew-letter-spacing-wide);
+    color: var(--stew-text-muted);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--stew-border);
+}
+
+.stew-filter-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Filter chips */
+.stew-filter-chip {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8125rem;
+    border: 1px solid var(--stew-border);
+    border-radius: var(--stew-radius);
+    color: var(--stew-text);
+    cursor: pointer;
+    transition: var(--stew-transition);
+    margin: 0.25rem;
+    background: var(--stew-white);
+}
+
+.stew-filter-chip:hover {
+    border-color: var(--stew-primary);
+    color: var(--stew-primary);
+}
+
+.stew-filter-chip--active,
+.stew-filter-chip.checked {
+    background-color: var(--stew-primary);
+    color: var(--stew-white);
+    border-color: var(--stew-primary);
+}
+
+/* FacetWP overrides */
+.facetwp-facet {
+    margin-bottom: 1.5rem;
+}
+
+.facetwp-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0;
+    font-size: 0.8125rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.facetwp-checkbox:hover {
+    color: var(--stew-primary);
+}
+
+.facetwp-checkbox.checked {
+    color: var(--stew-primary);
+    font-weight: 500;
+}
+
+.facetwp-slider .noUi-connect {
+    background: var(--stew-primary);
+}
+
+.facetwp-slider .noUi-handle {
+    border-color: var(--stew-primary);
+}
+
+/* ============================================
+   Single Product Page
+   ============================================ */
+.stew-single-product {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .stew-single-product {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 3rem;
+    }
+}
+
+.stew-product-gallery {
+    position: sticky;
+    top: 120px;
+}
+
+.stew-product-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--stew-radius);
+}
+
+.stew-product-info__title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.stew-product-info__price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.stew-product-info__description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--stew-text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Highlights */
+.stew-product-highlights {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--stew-off-white);
+    border-radius: var(--stew-radius);
+}
+
+.stew-product-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    font-size: 0.875rem;
+}
+
+.stew-product-highlights li::before {
+    content: "✓";
+    color: var(--stew-primary);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* Technical Specs Table */
+.stew-specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+
+.stew-specs-table th,
+.stew-specs-table td {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    text-align: left;
+    border-bottom: 1px solid var(--stew-border);
+}
+
+.stew-specs-table th {
+    font-weight: 500;
+    color: var(--stew-text-muted);
+    width: 40%;
+    background: transparent;
+}
+
+.stew-specs-table tr:nth-child(even) {
+    background: var(--stew-off-white);
+}
+
+.stew-specs-table tr:last-child th,
+.stew-specs-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Datasheet button */
+.stew-datasheet-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--stew-off-white);
+    border: 1px solid var(--stew-border);
+    border-radius: var(--stew-radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--stew-text);
+    text-decoration: none;
+    transition: var(--stew-transition);
+}
+
+.stew-datasheet-btn:hover {
+    border-color: var(--stew-primary);
+    color: var(--stew-primary);
+}
+
+.stew-datasheet-btn svg,
+.stew-datasheet-btn::before {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* WooCommerce tabs override */
+.stew-theme .woocommerce-tabs {
+    margin-top: 3rem;
+}
+
+.stew-theme .woocommerce-tabs ul.tabs {
+    border-bottom: 1px solid var(--stew-border);
+    padding: 0;
+    margin: 0 0 2rem;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.stew-theme .woocommerce-tabs ul.tabs::before {
+    display: none;
+}
+
+.stew-theme .woocommerce-tabs ul.tabs li {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stew-theme .woocommerce-tabs ul.tabs li a {
+    font-family: var(--stew-font);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--stew-text-muted);
+    padding: 0.75rem 0;
+    border-bottom: 2px solid transparent;
+    transition: var(--stew-transition);
+    text-decoration: none;
+}
+
+.stew-theme .woocommerce-tabs ul.tabs li.active a,
+.stew-theme .woocommerce-tabs ul.tabs li a:hover {
+    color: var(--stew-text);
+    border-bottom-color: var(--stew-primary);
+}
+
+/* ============================================
+   Trade Pricing Notice
+   ============================================ */
+.stew-trade-notice {
+    background: var(--stew-primary-soft);
+    border-left: 3px solid var(--stew-primary);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--stew-radius);
+}
+
+.stew-trade-notice p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.stew-trade-notice a {
+    color: var(--stew-primary-dark);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.stew-trade-notice a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   Newsletter Section
+   ============================================ */
+.stew-newsletter {
+    background: var(--stew-muted-bg);
+    padding: var(--stew-section-padding-mobile) 0;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .stew-newsletter {
+        padding: var(--stew-section-padding) 0;
+    }
+}
+
+.stew-newsletter__content {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.stew-newsletter__title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.stew-newsletter__text {
+    color: var(--stew-text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+}
+
+.stew-newsletter-form {
+    display: flex;
+    gap: 0.75rem;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.stew-newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--stew-border);
+    border-radius: var(--stew-radius);
+    font-family: var(--stew-font);
+    font-size: 0.875rem;
+    background: var(--stew-white);
+}
+
+.stew-newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--stew-primary);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.stew-theme #footer-outer,
+.stew-footer {
+    background-color: var(--stew-dark) !important;
+    color: var(--stew-white);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stew-footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+    .stew-footer__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+}
+
+.stew-footer__brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: var(--stew-letter-spacing-tight);
+    margin-bottom: 1rem;
+}
+
+.stew-footer__text {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+
+.stew-footer h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--stew-white);
+    margin-bottom: 1rem;
+}
+
+.stew-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stew-footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.stew-footer a {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.stew-footer a:hover {
+    color: var(--stew-primary);
+}
+
+.stew-footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Salient footer overrides */
+.stew-theme #footer-outer #footer-widgets .col {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.stew-theme #footer-outer a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.stew-theme #footer-outer a:hover {
+    color: var(--stew-primary);
+}
+
+/* ============================================
+   Contact Form
+   ============================================ */
+.stew-form-grid {
+    max-width: 640px;
+}
+
+.stew-form-row {
+    margin-bottom: 1.25rem;
+}
+
+.stew-form-row--half {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+    .stew-form-row--half {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.stew-form-field label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--stew-text);
+}
+
+.stew-form-field input,
+.stew-form-field select,
+.stew-form-field textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--stew-border);
+    border-radius: var(--stew-radius);
+    font-family: var(--stew-font);
+    font-size: 0.875rem;
+    background: var(--stew-white);
+    transition: border-color 0.2s ease;
+}
+
+.stew-form-field input:focus,
+.stew-form-field select:focus,
+.stew-form-field textarea:focus {
+    outline: none;
+    border-color: var(--stew-primary);
+}
+
+.stew-form-field textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* ============================================
+   WooCommerce Breadcrumbs
+   ============================================ */
+.stew-theme .woocommerce-breadcrumb {
+    font-size: 0.8125rem;
+    color: var(--stew-text-muted);
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.stew-theme .woocommerce-breadcrumb a {
+    color: var(--stew-text-muted);
+    text-decoration: none;
+}
+
+.stew-theme .woocommerce-breadcrumb a:hover {
+    color: var(--stew-primary);
+}
+
+/* ============================================
+   WooCommerce Cart
+   ============================================ */
+.stew-theme .woocommerce-cart table.cart {
+    border-collapse: collapse;
+}
+
+.stew-theme .woocommerce-cart table.cart th,
+.stew-theme .woocommerce-cart table.cart td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--stew-border);
+    font-size: 0.875rem;
+}
+
+.stew-theme .woocommerce-cart .cart_totals {
+    background: var(--stew-off-white);
+    padding: 1.5rem;
+    border-radius: var(--stew-radius);
+}
+
+/* ============================================
+   WooCommerce Checkout
+   ============================================ */
+.stew-theme .woocommerce-checkout .form-row label {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.stew-theme .woocommerce-checkout .form-row input.input-text,
+.stew-theme .woocommerce-checkout .form-row select {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--stew-border);
+    border-radius: var(--stew-radius);
+    font-family: var(--stew-font);
+}
+
+.stew-theme #order_review {
+    background: var(--stew-off-white);
+    padding: 1.5rem;
+    border-radius: var(--stew-radius);
+}
+
+/* ============================================
+   WooCommerce Notices
+   ============================================ */
+.stew-theme .woocommerce-message {
+    border-top-color: var(--stew-primary);
+    background: var(--stew-primary-soft);
+}
+
+.stew-theme .woocommerce-error {
+    border-top-color: var(--stew-error);
+}
+
+.stew-theme .woocommerce-info {
+    border-top-color: var(--stew-primary);
+    background: var(--stew-primary-soft);
+}
+
+/* ============================================
+   WooCommerce Quantity Input
+   ============================================ */
+.stew-theme .woocommerce .quantity .qty {
+    width: 4rem;
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid var(--stew-border);
+    border-radius: var(--stew-radius);
+    font-family: var(--stew-font);
+}
+
+/* ============================================
+   WooCommerce Pagination
+   ============================================ */
+.stew-theme .woocommerce-pagination {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.stew-theme .woocommerce-pagination ul.page-numbers {
+    display: inline-flex;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.stew-theme .woocommerce-pagination ul.page-numbers li a,
+.stew-theme .woocommerce-pagination ul.page-numbers li span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--stew-border);
+    border-radius: var(--stew-radius);
+    color: var(--stew-text);
+    text-decoration: none;
+    transition: var(--stew-transition);
+}
+
+.stew-theme .woocommerce-pagination ul.page-numbers li a:hover {
+    border-color: var(--stew-primary);
+    color: var(--stew-primary);
+}
+
+.stew-theme .woocommerce-pagination ul.page-numbers li span.current {
+    background: var(--stew-dark);
+    border-color: var(--stew-dark);
+    color: var(--stew-white);
+}
+
+/* ============================================
+   Related Products
+   ============================================ */
+.stew-related-products {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--stew-border);
+}
+
+.stew-related-products h2 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--stew-letter-spacing-wide);
+    color: var(--stew-text-muted);
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   About Section
+   ============================================ */
+.stew-about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .stew-about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ============================================
+   USP / Values Grid
+   ============================================ */
+.stew-usp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .stew-usp-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.stew-usp-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stew-usp-item__icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1.5rem;
+    color: var(--stew-primary);
+}
+
+.stew-usp-item__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.stew-usp-item__text {
+    font-size: 0.875rem;
+    color: var(--stew-text-muted);
+    line-height: 1.6;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.stew-text-center { text-align: center; }
+.stew-text-muted { color: var(--stew-text-muted); }
+.stew-bg-muted { background-color: var(--stew-muted-bg); }
+.stew-bg-dark { background-color: var(--stew-dark); color: var(--stew-white); }
+.stew-mt-0 { margin-top: 0; }
+.stew-mb-0 { margin-bottom: 0; }
+.stew-mb-1 { margin-bottom: 1rem; }
+.stew-mb-2 { margin-bottom: 2rem; }
+.stew-mb-3 { margin-bottom: 3rem; }
+
+/* ============================================
+   WooCommerce Star Rating
+   ============================================ */
+.stew-theme .star-rating {
+    color: var(--stew-primary);
+}
+
+/* ============================================
+   My Account Page
+   ============================================ */
+.stew-theme .woocommerce-MyAccount-navigation ul {
+    list-style: none;
+    padding: 0;
+    border: 1px solid var(--stew-border);
+    border-radius: var(--stew-radius);
+    overflow: hidden;
+}
+
+.stew-theme .woocommerce-MyAccount-navigation ul li {
+    border-bottom: 1px solid var(--stew-border);
+}
+
+.stew-theme .woocommerce-MyAccount-navigation ul li:last-child {
+    border-bottom: none;
+}
+
+.stew-theme .woocommerce-MyAccount-navigation ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: var(--stew-text);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.stew-theme .woocommerce-MyAccount-navigation ul li.is-active a,
+.stew-theme .woocommerce-MyAccount-navigation ul li a:hover {
+    background: var(--stew-off-white);
+    color: var(--stew-primary);
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+    .stew-hero,
+    .stew-newsletter,
+    .stew-filter-sidebar,
+    .stew-trade-notice,
+    #header-outer,
+    #footer-outer {
+        display: none !important;
+    }
+}

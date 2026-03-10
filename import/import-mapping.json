@@ -1,0 +1,305 @@
+{
+  "import_configuration": {
+    "name": "STEW Converter Artikelliste Import",
+    "description": "WP All Import Pro mapping for LED driver products from Converter Artikelliste.xlsx",
+    "source_file": "Converter Artikelliste.xlsx",
+    "import_type": "WooCommerce Products",
+    "product_type": "simple",
+    "product_status": "publish"
+  },
+  "column_mapping": {
+    "Nr.": {
+      "target_field": "SKU",
+      "woocommerce_field": "_sku",
+      "description": "Unique article number used as WooCommerce SKU",
+      "example": "CON-0001"
+    },
+    "Beschreibung": {
+      "target_field": "Product Name",
+      "woocommerce_field": "post_title",
+      "description": "Full product description used as product title",
+      "example": "LED Converter LC 10W 150-400mA flexC ph-cut IP20",
+      "parsing_rules": [
+        "Also used to extract: wattage, dimming type, current, IP rating, CC/CV type, series type"
+      ]
+    },
+    "Beschreibung 2": {
+      "target_field": "Dimensions (parsed)",
+      "woocommerce_field": null,
+      "acf_fields": [
+        "_acf_dimensions_length_mm",
+        "_acf_dimensions_width_mm",
+        "_acf_dimensions_height_mm"
+      ],
+      "description": "Contains physical dimensions in format 'L: 104mm B: 30mm H: 26mm'",
+      "example": "L: 104mm B: 30mm H: 26mm",
+      "parsing_rule": "Regex parse L/B/H values"
+    },
+    "Lagerbestand": {
+      "target_field": "Stock Quantity",
+      "woocommerce_field": "_stock",
+      "description": "Current stock quantity (integer)",
+      "example": "25",
+      "derived_fields": {
+        "_stock_status": "Lagerbestand > 0 => 'instock', else => 'outofstock'",
+        "_manage_stock": "yes"
+      }
+    },
+    "Regalnr.": {
+      "target_field": null,
+      "action": "SKIP",
+      "description": "Internal shelf number, not imported"
+    },
+    "VK-Preis": {
+      "target_field": "Regular Price",
+      "woocommerce_field": "_regular_price",
+      "description": "Retail price in CHF",
+      "example": "45.50",
+      "notes": "Prices with value 0 will show 'Preis auf Anfrage' via theme logic"
+    },
+    "Basiseinheit": {
+      "target_field": null,
+      "action": "SKIP",
+      "description": "Always 'STK' (Stueck/piece), not imported"
+    },
+    "Kred.-Artikelnr.": {
+      "target_field": "Manufacturer Part Number",
+      "acf_field": "manufacturer_part_number",
+      "description": "Manufacturer/supplier article number",
+      "example": "28003073"
+    },
+    "Kreditorennr.": {
+      "target_field": "Manufacturer Brand (mapped)",
+      "acf_field": "manufacturer_brand",
+      "description": "Supplier code mapped to brand name",
+      "example": "K00007",
+      "brand_mapping": {
+        "K00007": "Tridonic",
+        "K00013": "Osram/Ledvance",
+        "K00015": "Mean Well",
+        "K00001": "Philips",
+        "K00002": "Helvar",
+        "K00003": "Inventronics",
+        "K00004": "Lifud",
+        "K00005": "Eaglerise",
+        "K00006": "BAG Electronics",
+        "K00008": "Eldoled",
+        "K00009": "HEP",
+        "K00010": "Self Electronics",
+        "K00011": "TCI",
+        "K00012": "ELT",
+        "K00014": "Boke",
+        "K00016": "Casambi",
+        "K00017": "Silvair",
+        "K00018": "Zhaga",
+        "K00019": "Lunatone",
+        "K00020": "Zencontrol"
+      }
+    },
+    "Suchbegriff": {
+      "target_field": "Tags",
+      "woocommerce_field": "tax:product_tag",
+      "description": "Search keywords used as product tags",
+      "example": "LED,Treiber,Tridonic,DALI"
+    },
+    "Artikelrabattgruppe": {
+      "target_field": "Product Category",
+      "woocommerce_field": "tax:product_cat",
+      "description": "Article discount group mapped to WooCommerce product category",
+      "category_mapping": {
+        "CON": "LED Treiber"
+      }
+    }
+  },
+  "parsing_rules": {
+    "wattage": {
+      "source": "Beschreibung",
+      "target_acf_field": "power_watts",
+      "regex": "(\\d+(?:\\.\\d+)?)\\s*W\\b",
+      "description": "Extract number before 'W' in product description",
+      "examples": {
+        "LED Converter LC 10W 150-400mA": "10",
+        "LED Converter LCA 17.5W 350-700mA": "17.5",
+        "LED Converter OT FIT 75W": "75"
+      }
+    },
+    "dimming_type": {
+      "source": "Beschreibung",
+      "target_acf_field": "dimming_type",
+      "method": "keyword_search",
+      "description": "Search for dimming keywords in product description",
+      "keyword_mapping": {
+        "ON/OFF": "not_dimmable",
+        "DALI": "dali",
+        "Casambi": "casambi",
+        "1-10V": "1_10v",
+        "TouchDIM": "touchdim",
+        "NFC": "nfc",
+        "one4all": "one4all",
+        "Zigbee": "zigbee"
+      },
+      "output_format": "pipe_separated",
+      "notes": "Multiple dimming types possible per product, separated by '|'"
+    },
+    "dimensions": {
+      "source": "Beschreibung 2",
+      "target_acf_fields": {
+        "dimensions_length_mm": "L:\\s*(\\d+(?:\\.\\d+)?)\\s*mm",
+        "dimensions_width_mm": "B:\\s*(\\d+(?:\\.\\d+)?)\\s*mm",
+        "dimensions_height_mm": "H:\\s*(\\d+(?:\\.\\d+)?)\\s*mm"
+      },
+      "description": "Parse L/B/H dimensions from Beschreibung 2 field",
+      "example_input": "L: 104mm B: 30mm H: 26mm",
+      "example_output": {
+        "dimensions_length_mm": "104",
+        "dimensions_width_mm": "30",
+        "dimensions_height_mm": "26"
+      }
+    },
+    "ip_rating": {
+      "source": "Beschreibung",
+      "target_acf_field": "ip_protection",
+      "regex": "IP\\s*(\\d{2})",
+      "description": "Extract IP protection rating from product description",
+      "output_format": "IP{match}",
+      "examples": {
+        "LC 10W 150-400mA flexC ph-cut IP20": "IP20",
+        "OT FIT 75W IP67": "IP67"
+      }
+    },
+    "cc_cv_type": {
+      "source": "Beschreibung",
+      "target_acf_field": "cc_cv_type",
+      "method": "keyword_search",
+      "description": "Determine Constant Current vs Constant Voltage from product description",
+      "rules": [
+        {
+          "condition": "contains 'flexC' OR contains 'mA' (current range like '150-400mA')",
+          "result": "cc",
+          "description": "Constant Current - variable current output"
+        },
+        {
+          "condition": "contains fixed voltage output like '12V', '24V', '48V' (not input voltage 220/230/240V)",
+          "result": "cv",
+          "description": "Constant Voltage - fixed voltage output"
+        }
+      ]
+    },
+    "series_type": {
+      "source": "Beschreibung",
+      "target_acf_field": "series_type",
+      "method": "keyword_search_ordered",
+      "description": "Match product series from description (check longer matches first)",
+      "keyword_mapping_ordered": [
+        { "keyword": "OT FIT", "value": "ot_fit" },
+        { "keyword": "IT FIT", "value": "it_fit" },
+        { "keyword": "SUPERSLIM", "value": "superslim" },
+        { "keyword": "QUICKFIX", "value": "quickfix" },
+        { "keyword": "LCA", "value": "lca" },
+        { "keyword": "LC", "value": "lc" },
+        { "keyword": "FLS", "value": "fls" },
+        { "keyword": "FMS", "value": "fms" }
+      ],
+      "default": "other"
+    },
+    "output_current": {
+      "source": "Beschreibung",
+      "target_acf_field": "output_current_ma",
+      "regex": "(\\d+(?:[/-]\\d+)*\\s*mA)",
+      "description": "Extract mA values like '150-400mA' or '700mA'",
+      "examples": {
+        "LC 10W 150-400mA flexC": "150-400mA",
+        "LC 35W 700mA": "700mA",
+        "LCA 25W 350/500/700mA": "350/500/700mA"
+      }
+    },
+    "dimension_category": {
+      "source": "parsed dimensions_length_mm",
+      "target_acf_field": "dimension_category",
+      "method": "range_classification",
+      "description": "Classify product size based on length dimension",
+      "ranges": {
+        "compact": { "min": 0, "max": 120, "label": "Kompakt (<=120mm)" },
+        "medium": { "min": 121, "max": 250, "label": "Mittel (121-250mm)" },
+        "large": { "min": 251, "max": 99999, "label": "Gross (>=251mm)" }
+      }
+    },
+    "stock_status": {
+      "source": "Lagerbestand",
+      "target_woocommerce_field": "_stock_status",
+      "method": "threshold",
+      "description": "Set stock status based on stock quantity",
+      "rules": {
+        "greater_than_0": "instock",
+        "zero_or_less": "outofstock"
+      }
+    },
+    "input_voltage": {
+      "target_acf_field": "input_voltage",
+      "method": "default_value",
+      "default": "220_240v_ac",
+      "description": "Default input voltage for Swiss market products"
+    }
+  },
+  "csv_output_columns": [
+    "sku",
+    "product_name",
+    "regular_price",
+    "stock_quantity",
+    "stock_status",
+    "product_type",
+    "product_status",
+    "product_categories",
+    "tags",
+    "weight",
+    "length_mm",
+    "width_mm",
+    "height_mm",
+    "_acf_power_watts",
+    "_acf_cc_cv_type",
+    "_acf_dimming_type",
+    "_acf_output_current_ma",
+    "_acf_ip_protection",
+    "_acf_series_type",
+    "_acf_manufacturer_brand",
+    "_acf_manufacturer_part_number",
+    "_acf_dimensions_length_mm",
+    "_acf_dimensions_width_mm",
+    "_acf_dimensions_height_mm",
+    "_acf_dimension_category",
+    "_acf_input_voltage"
+  ],
+  "wp_all_import_settings": {
+    "unique_identifier": "sku",
+    "update_existing": true,
+    "create_new": true,
+    "product_type": "simple",
+    "post_status": "publish",
+    "taxonomies": {
+      "product_cat": "product_categories",
+      "product_tag": "tags"
+    },
+    "custom_fields_prefix": "_acf_",
+    "acf_field_mapping": {
+      "_acf_power_watts": "power_watts",
+      "_acf_cc_cv_type": "cc_cv_type",
+      "_acf_dimming_type": "dimming_type",
+      "_acf_output_current_ma": "output_current_ma",
+      "_acf_ip_protection": "ip_protection",
+      "_acf_series_type": "series_type",
+      "_acf_manufacturer_brand": "manufacturer_brand",
+      "_acf_manufacturer_part_number": "manufacturer_part_number",
+      "_acf_dimensions_length_mm": "dimensions_length_mm",
+      "_acf_dimensions_width_mm": "dimensions_width_mm",
+      "_acf_dimensions_height_mm": "dimensions_height_mm",
+      "_acf_dimension_category": "dimension_category",
+      "_acf_input_voltage": "input_voltage"
+    },
+    "notes": [
+      "ACF fields are mapped using the 'Custom Fields' section in WP All Import Pro",
+      "Select 'ACF Add-On' and map each CSV column to the corresponding ACF field name",
+      "For checkbox fields (dimming_type), pipe-separated values will be imported as multiple selections",
+      "The import script parse_excel.py generates this CSV from the source Excel file"
+    ]
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "_description": "STEW Webshop — WooCommerce Konfiguration",
+  "_version": "9.x",
+  "_last_updated": "2026-03-10",
+
+  "general": {
+    "woocommerce_store_address": "",
+    "woocommerce_store_address_2": "",
+    "woocommerce_store_city": "",
+    "woocommerce_store_postcode": "",
+    "woocommerce_default_country": "CH",
+    "woocommerce_allowed_countries": "specific",
+    "woocommerce_specific_allowed_countries": ["CH", "LI", "DE", "AT", "FR", "IT"],
+    "woocommerce_ship_to_countries": "specific",
+    "woocommerce_specific_ship_to_countries": ["CH", "LI", "DE", "AT", "FR", "IT"],
+    "woocommerce_default_customer_address": "base",
+    "woocommerce_calc_taxes": "yes",
+    "woocommerce_enable_coupons": "yes",
+    "woocommerce_calc_discounts_sequentially": "no",
+    "woocommerce_currency": "CHF",
+    "woocommerce_currency_pos": "left_space",
+    "woocommerce_price_thousand_sep": "'",
+    "woocommerce_price_decimal_sep": ".",
+    "woocommerce_price_num_decimals": "2"
+  },
+
+  "tax": {
+    "woocommerce_prices_include_tax": "yes",
+    "woocommerce_tax_based_on": "shop",
+    "woocommerce_shipping_tax_class": "inherit",
+    "woocommerce_tax_round_at_subtotal": "yes",
+    "woocommerce_tax_display_shop": "incl",
+    "woocommerce_tax_display_cart": "incl",
+    "woocommerce_price_display_suffix": "inkl. MwSt.",
+    "woocommerce_tax_total_display": "single",
+    "tax_rates": [
+      {
+        "country": "CH",
+        "state": "",
+        "rate": "8.1000",
+        "name": "MwSt.",
+        "priority": 1,
+        "compound": false,
+        "shipping": true,
+        "order": 1,
+        "class": "standard"
+      },
+      {
+        "country": "CH",
+        "state": "",
+        "rate": "2.6000",
+        "name": "MwSt. reduziert",
+        "priority": 1,
+        "compound": false,
+        "shipping": false,
+        "order": 2,
+        "class": "reduced-rate"
+      },
+      {
+        "country": "LI",
+        "state": "",
+        "rate": "8.1000",
+        "name": "MwSt.",
+        "priority": 1,
+        "compound": false,
+        "shipping": true,
+        "order": 3,
+        "class": "standard"
+      },
+      {
+        "country": "DE",
+        "state": "",
+        "rate": "0.0000",
+        "name": "Exportlieferung",
+        "priority": 1,
+        "compound": false,
+        "shipping": false,
+        "order": 4,
+        "class": "standard",
+        "_note": "EU-Export: 0% MwSt. — Reverse Charge"
+      },
+      {
+        "country": "AT",
+        "state": "",
+        "rate": "0.0000",
+        "name": "Exportlieferung",
+        "priority": 1,
+        "compound": false,
+        "shipping": false,
+        "order": 5,
+        "class": "standard",
+        "_note": "EU-Export: 0% MwSt. — Reverse Charge"
+      },
+      {
+        "country": "FR",
+        "state": "",
+        "rate": "0.0000",
+        "name": "Exportlieferung",
+        "priority": 1,
+        "compound": false,
+        "shipping": false,
+        "order": 6,
+        "class": "standard",
+        "_note": "EU-Export: 0% MwSt. — Reverse Charge"
+      },
+      {
+        "country": "IT",
+        "state": "",
+        "rate": "0.0000",
+        "name": "Exportlieferung",
+        "priority": 1,
+        "compound": false,
+        "shipping": false,
+        "order": 7,
+        "class": "standard",
+        "_note": "EU-Export: 0% MwSt. — Reverse Charge"
+      }
+    ]
+  },
+
+  "shipping": {
+    "woocommerce_enable_shipping_calc": "yes",
+    "woocommerce_shipping_cost_requires_address": "yes",
+    "woocommerce_ship_to_destination": "shipping",
+    "woocommerce_shipping_debug_mode": "no",
+    "shipping_zones": [
+      {
+        "zone_name": "Schweiz",
+        "zone_order": 1,
+        "zone_regions": [
+          {
+            "type": "country",
+            "code": "CH"
+          }
+        ],
+        "methods": [
+          {
+            "method_id": "flat_rate",
+            "method_title": "Standardversand",
+            "method_order": 1,
+            "enabled": true,
+            "settings": {
+              "title": "Standardversand (A-Post)",
+              "tax_status": "taxable",
+              "cost": "9.90",
+              "class_costs": "",
+              "no_class_cost": "",
+              "type": "class"
+            }
+          },
+          {
+            "method_id": "free_shipping",
+            "method_title": "Gratisversand",
+            "method_order": 2,
+            "enabled": true,
+            "settings": {
+              "title": "Gratisversand",
+              "requires": "min_amount",
+              "min_amount": "150.00",
+              "ignore_discounts": "no"
+            }
+          },
+          {
+            "method_id": "local_pickup",
+            "method_title": "Abholung",
+            "method_order": 3,
+            "enabled": true,
+            "settings": {
+              "title": "Abholung vor Ort",
+              "tax_status": "taxable",
+              "cost": "0.00"
+            }
+          }
+        ]
+      },
+      {
+        "zone_name": "Liechtenstein",
+        "zone_order": 2,
+        "zone_regions": [
+          {
+            "type": "country",
+            "code": "LI"
+          }
+        ],
+        "methods": [
+          {
+            "method_id": "flat_rate",
+            "method_title": "Versand Liechtenstein",
+            "method_order": 1,
+            "enabled": true,
+            "settings": {
+              "title": "Versand Liechtenstein",
+              "tax_status": "taxable",
+              "cost": "12.90"
+            }
+          },
+          {
+            "method_id": "free_shipping",
+            "method_title": "Gratisversand",
+            "method_order": 2,
+            "enabled": true,
+            "settings": {
+              "title": "Gratisversand",
+              "requires": "min_amount",
+              "min_amount": "200.00"
+            }
+          }
+        ]
+      },
+      {
+        "zone_name": "EU (DACH + Nachbarländer)",
+        "zone_order": 3,
+        "zone_regions": [
+          { "type": "country", "code": "DE" },
+          { "type": "country", "code": "AT" },
+          { "type": "country", "code": "FR" },
+          { "type": "country", "code": "IT" }
+        ],
+        "methods": [
+          {
+            "method_id": "flat_rate",
+            "method_title": "EU-Versand",
+            "method_order": 1,
+            "enabled": true,
+            "settings": {
+              "title": "Versand EU",
+              "tax_status": "none",
+              "cost": "24.90",
+              "_note": "Zollfrei bis Warenwert gem. Bestimmungsland. Kunde trägt ggf. Import-MwSt."
+            }
+          },
+          {
+            "method_id": "free_shipping",
+            "method_title": "Gratisversand EU",
+            "method_order": 2,
+            "enabled": true,
+            "settings": {
+              "title": "Gratisversand",
+              "requires": "min_amount",
+              "min_amount": "500.00"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "checkout": {
+    "woocommerce_enable_guest_checkout": "yes",
+    "woocommerce_enable_checkout_login_reminder": "yes",
+    "woocommerce_enable_signup_and_login_from_checkout": "yes",
+    "woocommerce_enable_myaccount_registration": "yes",
+    "woocommerce_registration_generate_username": "yes",
+    "woocommerce_registration_generate_password": "no",
+    "woocommerce_checkout_company_field": "optional",
+    "woocommerce_checkout_address_2_field": "optional",
+    "woocommerce_checkout_phone_field": "required",
+    "woocommerce_checkout_terms_and_conditions_checkbox_text": "Ich habe die [terms] gelesen und stimme diesen zu. *",
+    "woocommerce_checkout_privacy_policy_text": "Ihre persönlichen Daten werden verwendet, um Ihre Bestellung zu bearbeiten und Ihr Benutzerkonto zu verwalten. Weitere Informationen finden Sie in unserer [privacy_policy].",
+    "woocommerce_terms_page_id": "_page:agb",
+    "woocommerce_checkout_highlight_required_fields": "yes",
+    "woocommerce_cart_redirect_after_add": "no",
+    "woocommerce_enable_ajax_add_to_cart": "yes"
+  },
+
+  "payment_gateways": [
+    {
+      "id": "stripe",
+      "title": "Kreditkarte",
+      "description": "Bezahlen Sie sicher mit Visa, Mastercard oder American Express.",
+      "enabled": true,
+      "order": 1,
+      "settings": {
+        "payment_request": "yes",
+        "payment_request_button_type": "buy",
+        "payment_request_button_theme": "dark",
+        "statement_descriptor": "STEW GMBH",
+        "capture": "yes",
+        "saved_cards": "yes",
+        "testmode": "no",
+        "logging": "no",
+        "_note": "Stripe API-Schlüssel separat in den Stripe-Plugin-Einstellungen konfigurieren"
+      }
+    },
+    {
+      "id": "paypal",
+      "title": "PayPal",
+      "description": "Bezahlen Sie bequem mit Ihrem PayPal-Konto.",
+      "enabled": true,
+      "order": 2,
+      "settings": {
+        "email": "paypal@stew.ch",
+        "testmode": "no",
+        "invoice_prefix": "STEW-",
+        "_note": "PayPal API-Zugangsdaten separat konfigurieren"
+      }
+    },
+    {
+      "id": "bacs",
+      "title": "Banküberweisung / Vorauskasse",
+      "description": "Überweisen Sie den Betrag direkt auf unser Bankkonto. Ihre Bestellung wird nach Zahlungseingang bearbeitet.",
+      "enabled": true,
+      "order": 3,
+      "settings": {
+        "instructions": "Bitte überweisen Sie den Rechnungsbetrag innerhalb von 10 Tagen auf folgendes Konto:\n\nSTEW GmbH\nIBAN: CH00 0000 0000 0000 0000 0\nBank: [Bankname]\nReferenz: Bestellnummer",
+        "account_details": [
+          {
+            "account_name": "STEW GmbH",
+            "account_number": "",
+            "bank_name": "",
+            "sort_code": "",
+            "iban": "CH00 0000 0000 0000 0000 0",
+            "bic": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheque",
+      "title": "Rechnung (nur für Händler)",
+      "description": "Bezahlung auf Rechnung (nur für verifizierte Händlerkonten verfügbar).",
+      "enabled": true,
+      "order": 4,
+      "settings": {
+        "instructions": "Sie erhalten eine Rechnung mit 30 Tagen Zahlungsfrist.",
+        "_note": "Nur für Benutzerrolle 'wholesale' und 'vip_partner' aktivieren (via Code in role-based-pricing.php)"
+      }
+    }
+  ],
+
+  "accounts": {
+    "woocommerce_enable_myaccount_registration": "yes",
+    "woocommerce_registration_generate_username": "yes",
+    "woocommerce_registration_generate_password": "no",
+    "woocommerce_erasure_request_removes_order_data": "no",
+    "woocommerce_erasure_request_removes_download_data": "no",
+    "woocommerce_allow_bulk_remove_personal_data": "no",
+    "woocommerce_myaccount_orders_columns": ["order-number", "order-date", "order-status", "order-total", "order-actions"],
+    "woocommerce_myaccount_my_orders_query": {
+      "limit": 15
+    }
+  },
+
+  "emails": {
+    "woocommerce_email_from_name": "STEW GmbH",
+    "woocommerce_email_from_address": "info@stew.ch",
+    "woocommerce_email_header_image": "",
+    "woocommerce_email_footer_text": "STEW GmbH — Professionelle LED-Beleuchtung\n{site_url}",
+    "woocommerce_email_base_color": "#1a1a2e",
+    "woocommerce_email_background_color": "#0f0f1a",
+    "woocommerce_email_body_background_color": "#1a1a2e",
+    "woocommerce_email_text_color": "#e0e0e0",
+    "woocommerce_email_header_background_color": "#0f0f1a",
+    "woocommerce_email_header_text_color": "#00d4ff",
+    "woocommerce_email_link_color": "#00d4ff",
+    "email_templates": {
+      "new_order": {
+        "enabled": true,
+        "recipient": "info@stew.ch",
+        "subject": "Neue Bestellung #{order_number} — {order_date}",
+        "heading": "Neue Bestellung eingegangen",
+        "additional_content": ""
+      },
+      "cancelled_order": {
+        "enabled": true,
+        "recipient": "info@stew.ch",
+        "subject": "Bestellung #{order_number} storniert",
+        "heading": "Bestellung storniert"
+      },
+      "failed_order": {
+        "enabled": true,
+        "recipient": "info@stew.ch",
+        "subject": "Bestellung #{order_number} fehlgeschlagen",
+        "heading": "Bestellung fehlgeschlagen"
+      },
+      "customer_on_hold_order": {
+        "enabled": true,
+        "subject": "Ihre Bestellung #{order_number} wird bearbeitet",
+        "heading": "Vielen Dank für Ihre Bestellung",
+        "additional_content": "Ihre Bestellung wird bearbeitet. Sie erhalten eine Bestätigung, sobald die Zahlung eingegangen ist."
+      },
+      "customer_processing_order": {
+        "enabled": true,
+        "subject": "Ihre Bestellung #{order_number} wird vorbereitet",
+        "heading": "Ihre Bestellung wird vorbereitet",
+        "additional_content": "Wir bereiten Ihre Bestellung für den Versand vor. Sie erhalten eine Versandbestätigung mit Tracking-Informationen."
+      },
+      "customer_completed_order": {
+        "enabled": true,
+        "subject": "Ihre Bestellung #{order_number} wurde versendet",
+        "heading": "Ihre Bestellung ist unterwegs!",
+        "additional_content": "Vielen Dank für Ihren Einkauf bei STEW. Bei Fragen stehen wir Ihnen gerne zur Verfügung."
+      },
+      "customer_refunded_order": {
+        "enabled": true,
+        "subject": "Ihre Bestellung #{order_number} wurde erstattet",
+        "heading": "Rückerstattung für Ihre Bestellung",
+        "additional_content": "Der Betrag wird innerhalb von 5-10 Werktagen auf Ihrem Konto gutgeschrieben."
+      },
+      "customer_invoice": {
+        "enabled": true,
+        "subject": "Rechnung für Bestellung #{order_number}",
+        "heading": "Rechnung für Ihre Bestellung",
+        "additional_content": ""
+      },
+      "customer_note": {
+        "enabled": true,
+        "subject": "Hinweis zu Ihrer Bestellung #{order_number}",
+        "heading": "Hinweis zu Ihrer Bestellung"
+      },
+      "customer_reset_password": {
+        "enabled": true,
+        "subject": "Passwort zurücksetzen — STEW",
+        "heading": "Passwort zurücksetzen"
+      },
+      "customer_new_account": {
+        "enabled": true,
+        "subject": "Willkommen bei STEW — Ihr Kundenkonto",
+        "heading": "Willkommen bei STEW!",
+        "additional_content": "Ihr Kundenkonto wurde erfolgreich erstellt. Sie können nun Bestellungen aufgeben, Ihre Bestellhistorie einsehen und Ihre Daten verwalten."
+      }
+    }
+  },
+
+  "products": {
+    "woocommerce_shop_page_display": "both",
+    "woocommerce_category_archive_display": "both",
+    "woocommerce_default_catalog_orderby": "menu_order",
+    "woocommerce_catalog_rows": 4,
+    "woocommerce_catalog_columns": 3,
+    "woocommerce_catalog_columns_mobile": 2,
+    "posts_per_page": 24,
+    "woocommerce_single_image_width": 800,
+    "woocommerce_thumbnail_image_width": 450,
+    "woocommerce_thumbnail_cropping": "1:1",
+    "woocommerce_enable_reviews": "yes",
+    "woocommerce_review_rating_verification_label": "yes",
+    "woocommerce_review_rating_verification_required": "yes",
+    "woocommerce_enable_review_rating": "yes",
+    "woocommerce_review_rating_required": "yes",
+    "woocommerce_weight_unit": "kg",
+    "woocommerce_dimension_unit": "mm",
+    "woocommerce_manage_stock": "yes",
+    "woocommerce_hold_stock_minutes": 60,
+    "woocommerce_notify_low_stock_amount": 5,
+    "woocommerce_notify_no_stock_amount": 0,
+    "woocommerce_stock_format": "low_amount",
+    "woocommerce_hide_out_of_stock_items": "no"
+  },
+
+  "permalinks": {
+    "woocommerce_permalinks": {
+      "product_base": "/produkt",
+      "category_base": "/produktkategorie",
+      "tag_base": "/produkt-tag",
+      "attribute_base": "",
+      "use_verbose_page_rules": false
+    },
+    "permalink_structure": "/%postname%/"
+  },
+
+  "advanced": {
+    "woocommerce_cart_page_id": "_page:warenkorb",
+    "woocommerce_checkout_page_id": "_page:kasse",
+    "woocommerce_myaccount_page_id": "_page:mein-konto",
+    "woocommerce_terms_page_id": "_page:agb",
+    "woocommerce_force_ssl_checkout": "yes",
+    "woocommerce_unforce_ssl_checkout": "no",
+    "woocommerce_checkout_pay_endpoint": "order-pay",
+    "woocommerce_checkout_order_received_endpoint": "bestellung-erhalten",
+    "woocommerce_myaccount_add_payment_method_endpoint": "zahlungsmethode-hinzufuegen",
+    "woocommerce_myaccount_orders_endpoint": "bestellungen",
+    "woocommerce_myaccount_view_order_endpoint": "bestellung-ansehen",
+    "woocommerce_myaccount_downloads_endpoint": "downloads",
+    "woocommerce_myaccount_edit_account_endpoint": "konto-bearbeiten",
+    "woocommerce_myaccount_edit_address_endpoint": "adresse-bearbeiten",
+    "woocommerce_myaccount_lost_password_endpoint": "passwort-vergessen",
+    "woocommerce_logout_endpoint": "abmelden"
+  },
+
+  "inventory": {
+    "woocommerce_manage_stock": "yes",
+    "woocommerce_hold_stock_minutes": 60,
+    "woocommerce_notify_low_stock_amount": 5,
+    "woocommerce_notify_no_stock_amount": 0,
+    "woocommerce_stock_format": "low_amount",
+    "woocommerce_hide_out_of_stock_items": "no",
+    "woocommerce_stock_email_recipient": "info@stew.ch"
+  },
+
+  "_import_notes": {
+    "instructions": "Diese Datei dient als Referenz für die WooCommerce-Konfiguration. Die Einstellungen können manuell über das WordPress-Admin-Panel konfiguriert oder mit WP-CLI importiert werden.",
+    "wp_cli_examples": [
+      "wp option update woocommerce_currency CHF",
+      "wp option update woocommerce_currency_pos left_space",
+      "wp option update woocommerce_price_thousand_sep \"'\"",
+      "wp option update woocommerce_default_country CH",
+      "wp option update woocommerce_prices_include_tax yes",
+      "wp option update woocommerce_calc_taxes yes",
+      "wp option update woocommerce_enable_guest_checkout yes",
+      "wp option update permalink_structure '/%postname%/'",
+      "wp wc shipping_zone create --name='Schweiz' --order=1",
+      "wp wc tax create --country=CH --rate=8.1 --name='MwSt.' --shipping=true"
+    ]
+  }
+}

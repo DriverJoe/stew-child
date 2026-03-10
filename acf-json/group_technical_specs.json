@@ -1,0 +1,1027 @@
+[
+  {
+    "key": "group_technical_specs",
+    "title": "Technische Spezifikationen",
+    "fields": [
+      {
+        "key": "field_tab_hauptspezifikationen",
+        "label": "Hauptspezifikationen",
+        "name": "",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0,
+        "selected": 0
+      },
+      {
+        "key": "field_cc_cv_type",
+        "label": "CC/CV Typ",
+        "name": "cc_cv_type",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "cc": "Constant Current",
+          "cv": "Constant Voltage"
+        },
+        "default_value": "",
+        "return_format": "value",
+        "multiple": 0,
+        "allow_null": 1,
+        "ui": 1,
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_power_watts",
+        "label": "Leistung (Watt)",
+        "name": "power_watts",
+        "aria-label": "",
+        "type": "number",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "min": 0,
+        "max": "",
+        "step": 0.1,
+        "placeholder": "",
+        "prepend": "",
+        "append": "W"
+      },
+      {
+        "key": "field_output_current_ma",
+        "label": "Ausgangsstrom (mA)",
+        "name": "output_current_ma",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "z.B. 150-400mA",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_dimming_type",
+        "label": "Dimmung",
+        "name": "dimming_type",
+        "aria-label": "",
+        "type": "checkbox",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "not_dimmable": "Nicht dimmbar ON/OFF",
+          "dali": "DALI/DALI 2/DT8",
+          "1_10v": "1-10V",
+          "casambi": "Casambi BLE",
+          "touchdim": "TouchDIM",
+          "nfc": "NFC programmierbar",
+          "one4all": "one4all",
+          "zigbee": "Zigbee"
+        },
+        "default_value": [],
+        "return_format": "value",
+        "allow_custom": 0,
+        "layout": "vertical",
+        "toggle": 0,
+        "save_custom": 0,
+        "custom_choice_button_text": "Add new choice"
+      },
+      {
+        "key": "field_output_channels",
+        "label": "Ausgangskan\u00e4le",
+        "name": "output_channels",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "1": "1",
+          "2": "2",
+          "4": "4"
+        },
+        "default_value": "",
+        "return_format": "value",
+        "multiple": 0,
+        "allow_null": 1,
+        "ui": 1,
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_tab_geraetespezifikationen",
+        "label": "Ger\u00e4tespezifikationen",
+        "name": "",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0,
+        "selected": 0
+      },
+      {
+        "key": "field_ip_protection",
+        "label": "IP-Schutzart",
+        "name": "ip_protection",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "IP20": "IP20",
+          "IP30": "IP30",
+          "IP42": "IP42",
+          "IP44": "IP44",
+          "IP54": "IP54",
+          "IP65": "IP65",
+          "IP66": "IP66",
+          "IP67": "IP67",
+          "IP68": "IP68"
+        },
+        "default_value": "",
+        "return_format": "value",
+        "multiple": 0,
+        "allow_null": 1,
+        "ui": 1,
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_dimensions_length_mm",
+        "label": "L\u00e4nge (mm)",
+        "name": "dimensions_length_mm",
+        "aria-label": "",
+        "type": "number",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "min": 0,
+        "max": "",
+        "step": 1,
+        "placeholder": "",
+        "prepend": "",
+        "append": "mm"
+      },
+      {
+        "key": "field_dimensions_width_mm",
+        "label": "Breite (mm)",
+        "name": "dimensions_width_mm",
+        "aria-label": "",
+        "type": "number",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "min": 0,
+        "max": "",
+        "step": 1,
+        "placeholder": "",
+        "prepend": "",
+        "append": "mm"
+      },
+      {
+        "key": "field_dimensions_height_mm",
+        "label": "H\u00f6he (mm)",
+        "name": "dimensions_height_mm",
+        "aria-label": "",
+        "type": "number",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "min": 0,
+        "max": "",
+        "step": 1,
+        "placeholder": "",
+        "prepend": "",
+        "append": "mm"
+      },
+      {
+        "key": "field_dimension_category",
+        "label": "Gr\u00f6ssenkategorie",
+        "name": "dimension_category",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "Wird automatisch basierend auf der L\u00e4nge berechnet",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "compact": "Kompakt (\u2264120mm)",
+          "medium": "Mittel (121-250mm)",
+          "large": "Gross (\u2265251mm)"
+        },
+        "default_value": "",
+        "return_format": "value",
+        "multiple": 0,
+        "allow_null": 1,
+        "ui": 1,
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_input_voltage",
+        "label": "Eingangsspannung",
+        "name": "input_voltage",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "220_240v_ac": "220-240V AC",
+          "110v_ac": "110V AC",
+          "24v_dc": "24V DC",
+          "multi": "Multi-Voltage"
+        },
+        "default_value": "",
+        "return_format": "value",
+        "multiple": 0,
+        "allow_null": 1,
+        "ui": 1,
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_series_type",
+        "label": "Serien-Typ",
+        "name": "series_type",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "lc": "LC",
+          "lca": "LCA",
+          "ot_fit": "OT FIT",
+          "it_fit": "IT FIT",
+          "fls": "FLS",
+          "fms": "FMS",
+          "superslim": "SUPERSLIM",
+          "quickfix": "QUICKFIX",
+          "other": "Andere"
+        },
+        "default_value": "",
+        "return_format": "value",
+        "multiple": 0,
+        "allow_null": 1,
+        "ui": 1,
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_tab_zusaetzlich",
+        "label": "Zus\u00e4tzlich",
+        "name": "",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0,
+        "selected": 0
+      },
+      {
+        "key": "field_additional_functions",
+        "label": "Zusatzfunktionen",
+        "name": "additional_functions",
+        "aria-label": "",
+        "type": "checkbox",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "emergency": "Notlicht",
+          "nfc": "NFC",
+          "smart_casambi": "Smart/Casambi",
+          "selv": "SELV"
+        },
+        "default_value": [],
+        "return_format": "value",
+        "allow_custom": 0,
+        "layout": "vertical",
+        "toggle": 0,
+        "save_custom": 0,
+        "custom_choice_button_text": "Add new choice"
+      },
+      {
+        "key": "field_manufacturer_brand",
+        "label": "Hersteller/Marke",
+        "name": "manufacturer_brand",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_manufacturer_part_number",
+        "label": "Hersteller-Artikelnummer",
+        "name": "manufacturer_part_number",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_datasheet_pdf",
+        "label": "Datenblatt (PDF)",
+        "name": "datasheet_pdf",
+        "aria-label": "",
+        "type": "file",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "url",
+        "library": "all",
+        "min_size": "",
+        "max_size": "",
+        "mime_types": "pdf"
+      },
+      {
+        "key": "field_tab_lichtspezifikationen",
+        "label": "Lichtspezifikationen",
+        "name": "",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0,
+        "selected": 0
+      },
+      {
+        "key": "field_ugr_rating",
+        "label": "UGR-Wert",
+        "name": "ugr_rating",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_cri_value",
+        "label": "CRI-Wert",
+        "name": "cri_value",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_cct_colour_temp",
+        "label": "Farbtemperatur (K)",
+        "name": "cct_colour_temp",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_beam_angle",
+        "label": "Abstrahlwinkel",
+        "name": "beam_angle",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_lumen_output",
+        "label": "Lichtstrom (lm)",
+        "name": "lumen_output",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_tilt_range",
+        "label": "Schwenkbereich",
+        "name": "tilt_range",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_cutout_diameter",
+        "label": "Einbaudurchmesser",
+        "name": "cutout_diameter",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_ceiling_thickness",
+        "label": "Deckendicke",
+        "name": "ceiling_thickness",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_recess_depth",
+        "label": "Einbautiefe",
+        "name": "recess_depth",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_led_source",
+        "label": "LED-Quelle",
+        "name": "led_source",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_system_wattage",
+        "label": "Systemleistung",
+        "name": "system_wattage",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_lifetime",
+        "label": "Lebensdauer",
+        "name": "lifetime",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "einbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "aufbauleuchten"
+            }
+          ],
+          [
+            {
+              "field": "field_product_category_check",
+              "operator": "==",
+              "value": "dekorative_leuchten"
+            }
+          ]
+        ],
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "product"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Technische Spezifikationen fuer LED-Produkte",
+    "show_in_rest": 0,
+    "modified": 1710072000
+  }
+]

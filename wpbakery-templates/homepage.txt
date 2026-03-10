@@ -1,0 +1,119 @@
+<!-- ============================================
+     STEW Homepage (Startseite)
+     WPBakery Page Builder Template
+     ============================================ -->
+
+<!-- SECTION 1: Hero -->
+[vc_row full_width="stretch_row_content_no_spaces" css=".vc_custom_stew_hero{padding-top: 0px !important;padding-bottom: 0px !important;}" el_class="stew-hero-row"][vc_column][rev_slider_vc alias="stew-hero"]
+
+[vc_row full_width="stretch_row_content_no_spaces" parallax="content-moving" parallax_image="" css=".vc_custom_stew_hero{min-height: 80vh; display: flex; align-items: center; background-color: #1a1a1a;}" el_class="stew-hero-section"][vc_column width="1/1" css=".vc_custom_stew_hero_col{text-align: center; padding: 80px 20px;}"]
+
+[vc_column_text css=".vc_custom_stew_hero_title{color: #ffffff;}"]
+<h1 style="color: #ffffff; font-size: 3rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 1.5rem; font-family: 'Inter', sans-serif;">Professionelle LED-Beleuchtung für anspruchsvolle Projekte</h1>
+<p style="color: rgba(255,255,255,0.85); font-size: 1.125rem; font-weight: 300; max-width: 640px; margin: 0 auto 2rem; line-height: 1.7;">Hochwertige Leuchten und LED-Treiber für Architekten, Lichtplaner und Elektroinstallateure</p>
+[/vc_column_text]
+
+[nectar_btn size="large" button_style="regular" button_color_2="rgba(201,169,110,1)" icon_family="none" url="/shop/" text="Katalog ansehen" css_style="margin: 0 auto;"]
+
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 2: Nach Kollektion einkaufen -->
+[vc_row css=".vc_custom_stew_collections{padding-top: 80px; padding-bottom: 80px;}"][vc_column width="1/1"]
+
+[vc_column_text css=".vc_custom_stew_section_heading{text-align: center; margin-bottom: 3rem;}"]
+<h2 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #737373; margin-bottom: 0.5rem;">KOLLEKTION</h2>
+<h3 style="font-size: 2rem; font-weight: 600;">Nach Kollektion einkaufen</h3>
+[/vc_column_text]
+
+[/vc_column][/vc_row]
+
+[vc_row css=".vc_custom_stew_cat_grid{padding-bottom: 80px;}"][vc_column width="1/4"]
+[vc_single_image image="" img_size="category-card" onclick="custom_link" link="/produktkategorie/einbauleuchten/" css=".vc_custom_stew_cat{border: 1px solid #E8E5E0; border-radius: 2px; overflow: hidden;}" el_class="stew-category-card"]
+[vc_column_text]
+<p style="padding: 1rem; font-size: 0.875rem; font-weight: 500;">Einbauleuchten</p>
+[/vc_column_text]
+[/vc_column]
+
+[vc_column width="1/4"]
+[vc_single_image image="" img_size="category-card" onclick="custom_link" link="/produktkategorie/aufbauleuchten/" css=".vc_custom_stew_cat{border: 1px solid #E8E5E0; border-radius: 2px; overflow: hidden;}" el_class="stew-category-card"]
+[vc_column_text]
+<p style="padding: 1rem; font-size: 0.875rem; font-weight: 500;">Aufbauleuchten</p>
+[/vc_column_text]
+[/vc_column]
+
+[vc_column width="1/4"]
+[vc_single_image image="" img_size="category-card" onclick="custom_link" link="/produktkategorie/dekorative-leuchten/" css=".vc_custom_stew_cat{border: 1px solid #E8E5E0; border-radius: 2px; overflow: hidden;}" el_class="stew-category-card"]
+[vc_column_text]
+<p style="padding: 1rem; font-size: 0.875rem; font-weight: 500;">Dekorative Leuchten</p>
+[/vc_column_text]
+[/vc_column]
+
+[vc_column width="1/4"]
+[vc_single_image image="" img_size="category-card" onclick="custom_link" link="/produktkategorie/led-treiber/" css=".vc_custom_stew_cat{border: 1px solid #E8E5E0; border-radius: 2px; overflow: hidden;}" el_class="stew-category-card"]
+[vc_column_text]
+<p style="padding: 1rem; font-size: 0.875rem; font-weight: 500;">LED Treiber</p>
+[/vc_column_text]
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 3: Featured Products -->
+[vc_row css=".vc_custom_stew_featured{padding-top: 80px; padding-bottom: 80px; background-color: #F8F8F8;}"][vc_column width="1/1"]
+
+[vc_column_text css=".vc_custom_stew_section_heading{text-align: center; margin-bottom: 3rem;}"]
+<h2 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #737373; margin-bottom: 0.5rem;">PRODUKTE</h2>
+<h3 style="font-size: 2rem; font-weight: 600;">Ausgewählte Produkte</h3>
+[/vc_column_text]
+
+[products limit="4" columns="4" visibility="featured"]
+
+[vc_column_text css=".vc_custom_stew_cta{text-align: center; margin-top: 2rem;}"]
+<a href="/shop/" style="display: inline-block; padding: 0.75rem 1.5rem; background: #1A1A1A; color: #ffffff; text-decoration: none; font-size: 0.875rem; font-weight: 500;">Alle Produkte ansehen →</a>
+[/vc_column_text]
+
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 4: Über STEW -->
+[vc_row css=".vc_custom_stew_about{padding-top: 80px; padding-bottom: 80px;}"][vc_column width="1/2"]
+
+[vc_column_text]
+<h2 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #737373; margin-bottom: 0.5rem;">ÜBER UNS</h2>
+<h3 style="font-size: 2rem; font-weight: 600; margin-bottom: 1.5rem;">Über STEW</h3>
+<p style="font-size: 1rem; line-height: 1.7; color: #737373; margin-bottom: 1.5rem;">STEW steht für hochwertige LED-Beleuchtungslösungen. Als Schweizer Unternehmen beliefern wir Architekten, Lichtplaner und Elektroinstallateure mit erstklassigen Leuchten und LED-Treibern führender Hersteller.</p>
+<p style="font-size: 1rem; line-height: 1.7; color: #737373; margin-bottom: 2rem;">Mit unserem Fokus auf technische Kompetenz und persönliche Beratung sind wir Ihr verlässlicher Partner für anspruchsvolle Beleuchtungsprojekte in der Schweiz.</p>
+[/vc_column_text]
+
+[nectar_btn size="medium" button_style="regular" button_color_2="#1A1A1A" icon_family="none" url="/ueber-uns/" text="Mehr erfahren"]
+
+[/vc_column][vc_column width="1/2"]
+
+[vc_single_image image="" img_size="large" css=".vc_custom_stew_about_img{border-radius: 2px;}"]
+
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 5: Newsletter -->
+[vc_row full_width="stretch_row" css=".vc_custom_stew_newsletter{padding-top: 80px; padding-bottom: 80px; background-color: #F5F5F2;}" el_class="stew-newsletter"][vc_column width="1/1" css=".vc_custom_stew_nl_center{text-align: center;}"]
+
+[vc_column_text]
+<h3 style="font-size: 1.75rem; font-weight: 600; margin-bottom: 0.75rem;">Newsletter</h3>
+<p style="color: #737373; margin-bottom: 1.5rem;">Erhalten Sie Updates zu neuen Produkten und exklusiven Angeboten.</p>
+[/vc_column_text]
+
+[contact-form-7 id="newsletter" title="Newsletter"]
+
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 6: Footer CTA -->
+[vc_row css=".vc_custom_stew_footercta{padding-top: 60px; padding-bottom: 60px; border-top: 1px solid #E8E5E0;}"][vc_column width="1/1" css=".vc_custom_stew_cta_center{text-align: center;}"]
+
+[vc_column_text]
+<h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Haben Sie Fragen?</h3>
+<p style="color: #737373; margin-bottom: 1.5rem;">Unser Team steht Ihnen gerne zur Verfügung.</p>
+[/vc_column_text]
+
+[nectar_btn size="medium" button_style="regular" button_color_2="#1A1A1A" icon_family="none" url="/kontakt/" text="Kontakt aufnehmen"]
+
+[/vc_column][/vc_row]

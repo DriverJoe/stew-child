@@ -1,0 +1,225 @@
+<!-- ============================================
+     STEW Legal Pages
+     WPBakery Page Builder Templates
+
+     This file contains 3 page templates:
+     1. Impressum
+     2. Datenschutz (Privacy Policy)
+     3. AGB (Terms & Conditions)
+
+     Copy each section into its respective WordPress page.
+     ============================================ -->
+
+
+<!-- ============================================
+     PAGE 1: IMPRESSUM
+     ============================================ -->
+
+[vc_row css=".vc_custom_stew_header{padding-top: 60px; padding-bottom: 60px; background-color: #F8F8F8;}"][vc_column width="1/1"]
+[vc_column_text]
+<p style="font-size: 0.8125rem; color: #737373;"><a href="/" style="color: #737373; text-decoration: none;">Startseite</a> / Impressum</p>
+<h1 style="font-size: 2.5rem; font-weight: 600;">Impressum</h1>
+[/vc_column_text]
+[/vc_column][/vc_row]
+
+[vc_row css=".vc_custom_stew_legal{padding-top: 60px; padding-bottom: 80px; max-width: 800px; margin: 0 auto;}"][vc_column width="1/1"]
+
+[vc_column_text]
+<h3>Angaben gemäss Art. 3 UWG / Art. 883 OR</h3>
+
+<p><strong>LG Lightguide AG</strong><br>
+Handelsname: STEW<br>
+Musterstrasse 123<br>
+CH-8000 Zürich<br>
+Schweiz</p>
+
+<p><strong>Kontakt:</strong><br>
+Telefon: +41 44 123 45 67<br>
+E-Mail: info@stew.ch<br>
+Website: www.stew.ch</p>
+
+<p><strong>Vertretungsberechtigte Person(en):</strong><br>
+[Name des Geschäftsführers]</p>
+
+<p><strong>Handelsregistereintrag:</strong><br>
+Eingetragen im Handelsregister des Kantons Zürich<br>
+UID: CHE-XXX.XXX.XXX</p>
+
+<p><strong>Mehrwertsteuernummer:</strong><br>
+CHE-XXX.XXX.XXX MWST</p>
+
+<h3>Haftungsausschluss</h3>
+<p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.</p>
+
+<p>Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
+
+<h3>Haftung für Links</h3>
+<p>Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin.</p>
+
+<h3>Urheberrechte</h3>
+<p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich der LG Lightguide AG oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.</p>
+[/vc_column_text]
+
+[/vc_column][/vc_row]
+
+
+<!-- ============================================
+     PAGE 2: DATENSCHUTZ (Privacy Policy)
+     ============================================ -->
+
+[vc_row css=".vc_custom_stew_header{padding-top: 60px; padding-bottom: 60px; background-color: #F8F8F8;}"][vc_column width="1/1"]
+[vc_column_text]
+<p style="font-size: 0.8125rem; color: #737373;"><a href="/" style="color: #737373; text-decoration: none;">Startseite</a> / Datenschutz</p>
+<h1 style="font-size: 2.5rem; font-weight: 600;">Datenschutzerklärung</h1>
+[/vc_column_text]
+[/vc_column][/vc_row]
+
+[vc_row css=".vc_custom_stew_legal{padding-top: 60px; padding-bottom: 80px; max-width: 800px; margin: 0 auto;}"][vc_column width="1/1"]
+
+[vc_column_text]
+<p><em>Stand: [Datum einfügen]</em></p>
+
+<h3>1. Verantwortliche Stelle</h3>
+<p>Verantwortlich für die Datenbearbeitung auf dieser Website ist:<br>
+LG Lightguide AG (STEW)<br>
+Musterstrasse 123<br>
+CH-8000 Zürich<br>
+E-Mail: info@stew.ch</p>
+
+<h3>2. Erhebung und Verarbeitung personenbezogener Daten</h3>
+<p>Wir erheben personenbezogene Daten, wenn Sie uns diese im Rahmen einer Bestellung, bei der Kontaktaufnahme (z.B. per Kontaktformular oder E-Mail) oder bei der Registrierung für ein Kundenkonto freiwillig mitteilen. Welche Daten erhoben werden, ist aus den jeweiligen Formularen ersichtlich. Die von Ihnen mitgeteilten Daten verwenden wir zur Vertragsabwicklung und Bearbeitung Ihrer Anfragen.</p>
+
+<h3>3. Nutzung des Online-Shops</h3>
+<p>Bei einer Bestellung über unseren WooCommerce-basierten Online-Shop erheben wir folgende Daten:</p>
+<ul>
+<li>Vor- und Nachname</li>
+<li>Rechnungs- und Lieferadresse</li>
+<li>E-Mail-Adresse</li>
+<li>Telefonnummer (optional)</li>
+<li>Zahlungsinformationen</li>
+<li>Bestellhistorie</li>
+</ul>
+<p>Diese Daten sind zur Vertragserfüllung erforderlich und werden gemäss den gesetzlichen Aufbewahrungsfristen gespeichert.</p>
+
+<h3>4. Kundenkonten und Rollen</h3>
+<p>Bei der Registrierung eines Kundenkontos speichern wir Ihre Angaben zur Verwaltung Ihres Kontos. Händlerkonten unterliegen einer manuellen Prüfung durch unser Team.</p>
+
+<h3>5. Cookies</h3>
+<p>Unsere Website verwendet Cookies. Dabei handelt es sich um kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Folgende Arten von Cookies setzen wir ein:</p>
+<ul>
+<li><strong>Notwendige Cookies:</strong> Für den Betrieb des Online-Shops (Warenkorb, Login-Status)</li>
+<li><strong>Analyse-Cookies:</strong> Zur Verbesserung unseres Angebots (z.B. Google Analytics)</li>
+<li><strong>Marketing-Cookies:</strong> Nur mit Ihrer ausdrücklichen Einwilligung</li>
+</ul>
+<p>Sie können die Verwendung von Cookies in Ihren Browsereinstellungen einschränken oder vollständig unterbinden.</p>
+
+<h3>6. Google Analytics</h3>
+<p>Diese Website nutzt Google Analytics, einen Webanalysedienst der Google LLC. Google Analytics verwendet Cookies, die eine Analyse der Benutzung der Website ermöglichen. Wir verwenden Google Analytics mit der Erweiterung «anonymizeIp()», sodass IP-Adressen nur gekürzt verarbeitet werden.</p>
+
+<h3>7. Newsletter</h3>
+<p>Wenn Sie unseren Newsletter abonnieren, verwenden wir Ihre E-Mail-Adresse ausschliesslich für den Versand des Newsletters. Eine Abmeldung ist jederzeit über den Link am Ende jedes Newsletters möglich.</p>
+
+<h3>8. Kontaktformular</h3>
+<p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Formular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage bei uns gespeichert.</p>
+
+<h3>9. Zahlungsabwicklung</h3>
+<p>Für die Zahlungsabwicklung nutzen wir externe Zahlungsdienstleister (Stripe, PayPal). Ihre Zahlungsdaten werden direkt an den Zahlungsdienstleister übermittelt und nicht auf unseren Servern gespeichert.</p>
+
+<h3>10. SSL/TLS-Verschlüsselung</h3>
+<p>Diese Website nutzt aus Sicherheitsgründen eine SSL/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von «http://» auf «https://» wechselt.</p>
+
+<h3>11. Ihre Rechte</h3>
+<p>Sie haben das Recht auf:</p>
+<ul>
+<li>Auskunft über Ihre bei uns gespeicherten Daten</li>
+<li>Berichtigung unrichtiger Daten</li>
+<li>Löschung Ihrer Daten</li>
+<li>Einschränkung der Datenverarbeitung</li>
+<li>Datenübertragbarkeit</li>
+<li>Widerspruch gegen die Datenverarbeitung</li>
+</ul>
+<p>Bitte wenden Sie sich hierzu an: info@stew.ch</p>
+
+<h3>12. Hosting</h3>
+<p>Diese Website wird bei Amazon Web Services (AWS) in Frankfurt, Deutschland gehostet. AWS erfüllt die Anforderungen der DSGVO und verfügt über entsprechende Zertifizierungen.</p>
+
+<h3>13. Änderungen</h3>
+<p>Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen. Die aktuelle Version ist stets auf unserer Website einsehbar.</p>
+[/vc_column_text]
+
+[/vc_column][/vc_row]
+
+
+<!-- ============================================
+     PAGE 3: AGB (Terms & Conditions)
+     ============================================ -->
+
+[vc_row css=".vc_custom_stew_header{padding-top: 60px; padding-bottom: 60px; background-color: #F8F8F8;}"][vc_column width="1/1"]
+[vc_column_text]
+<p style="font-size: 0.8125rem; color: #737373;"><a href="/" style="color: #737373; text-decoration: none;">Startseite</a> / AGB</p>
+<h1 style="font-size: 2.5rem; font-weight: 600;">Allgemeine Geschäftsbedingungen</h1>
+[/vc_column_text]
+[/vc_column][/vc_row]
+
+[vc_row css=".vc_custom_stew_legal{padding-top: 60px; padding-bottom: 80px; max-width: 800px; margin: 0 auto;}"][vc_column width="1/1"]
+
+[vc_column_text]
+<p><em>Stand: [Datum einfügen]</em></p>
+
+<h3>1. Geltungsbereich</h3>
+<p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Bestellungen, die über den Online-Shop von STEW (betrieben von der LG Lightguide AG) getätigt werden. Mit der Bestellung akzeptiert der Kunde diese AGB.</p>
+
+<h3>2. Vertragsabschluss</h3>
+<p>Die Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot, sondern eine Aufforderung zur Bestellung dar. Durch das Absenden der Bestellung gibt der Kunde ein verbindliches Angebot ab. Die Auftragsbestätigung per E-Mail stellt die Annahme des Angebots dar.</p>
+
+<h3>3. Preise und Zahlung</h3>
+<p>Alle Preise verstehen sich in Schweizer Franken (CHF) inklusive der gesetzlichen Mehrwertsteuer (8.1%). Die Versandkosten werden im Bestellvorgang separat ausgewiesen.</p>
+<p>Folgende Zahlungsarten stehen zur Verfügung:</p>
+<ul>
+<li>Kreditkarte (via Stripe)</li>
+<li>PayPal</li>
+<li>Banküberweisung (Vorkasse)</li>
+</ul>
+<p>Händlerpreise gelten nur für registrierte und freigeschaltete Händlerkonten.</p>
+
+<h3>4. Lieferung</h3>
+<p>Die Lieferung erfolgt an die vom Kunden angegebene Lieferadresse. Standardlieferungen innerhalb der Schweiz erfolgen in der Regel innerhalb von 2–5 Werktagen.</p>
+<p>Versandkosten:</p>
+<ul>
+<li>Schweiz: CHF 9.90 (kostenlos ab CHF 150.00)</li>
+<li>Liechtenstein: CHF 12.90</li>
+<li>EU: CHF 24.90</li>
+</ul>
+<p>Abholung am Standort ist nach Vereinbarung möglich (kostenlos).</p>
+
+<h3>5. Widerrufsrecht</h3>
+<p>Der Kunde hat das Recht, innerhalb von 14 Tagen nach Erhalt der Ware ohne Angabe von Gründen den Vertrag zu widerrufen. Die Ware muss in einwandfreiem Zustand und in der Originalverpackung zurückgesandt werden. Die Kosten der Rücksendung trägt der Kunde.</p>
+<p>Vom Widerrufsrecht ausgenommen sind:</p>
+<ul>
+<li>Massangefertigte oder personalisierte Produkte</li>
+<li>Produkte, die aus hygienischen Gründen nicht zurückgenommen werden können</li>
+</ul>
+
+<h3>6. Gewährleistung</h3>
+<p>Es gelten die gesetzlichen Gewährleistungsrechte gemäss Schweizer Recht (OR Art. 197 ff.). Die Gewährleistungsfrist beträgt 2 Jahre ab Lieferdatum. Herstellergarantien bleiben davon unberührt.</p>
+
+<h3>7. Haftung</h3>
+<p>Die Haftung der LG Lightguide AG ist auf Vorsatz und grobe Fahrlässigkeit beschränkt. Eine Haftung für indirekte Schäden oder entgangenen Gewinn ist ausgeschlossen, soweit gesetzlich zulässig.</p>
+
+<h3>8. Datenschutz</h3>
+<p>Informationen zur Verarbeitung personenbezogener Daten finden Sie in unserer <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+
+<h3>9. Anwendbares Recht und Gerichtsstand</h3>
+<p>Es gilt ausschliesslich Schweizer Recht unter Ausschluss des UN-Kaufrechts (CISG). Gerichtsstand ist Zürich, Schweiz.</p>
+
+<h3>10. Salvatorische Klausel</h3>
+<p>Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, so bleibt die Wirksamkeit der übrigen Bestimmungen davon unberührt.</p>
+
+<h3>11. Kontakt</h3>
+<p>Bei Fragen zu diesen AGB wenden Sie sich bitte an:<br>
+LG Lightguide AG / STEW<br>
+E-Mail: info@stew.ch<br>
+Telefon: +41 44 123 45 67</p>
+[/vc_column_text]
+
+[/vc_column][/vc_row]

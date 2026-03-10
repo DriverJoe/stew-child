@@ -1,0 +1,297 @@
+{
+  "facets": [
+    {
+      "name": "cc_cv_type",
+      "label": "CC/CV Typ",
+      "type": "dropdown",
+      "source": "acf/cc_cv_type",
+      "label_any": "Alle Typen",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "10",
+      "operator": "and",
+      "multiple": "no",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "default_label": "CC/CV Typ w\u00e4hlen"
+    },
+    {
+      "name": "power_watts",
+      "label": "Leistung (Watt)",
+      "type": "slider",
+      "source": "acf/power_watts",
+      "compare_type": "",
+      "prefix": "",
+      "suffix": " W",
+      "format": "0,0",
+      "step": 1,
+      "slider_range": "auto",
+      "reset_text": "Zur\u00fccksetzen"
+    },
+    {
+      "name": "output_current",
+      "label": "Ausgangsstrom",
+      "type": "checkboxes",
+      "source": "acf/output_current_ma",
+      "label_any": "",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "20",
+      "operator": "and",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "show_expanded": "no"
+    },
+    {
+      "name": "dimming_type",
+      "label": "Dimmung",
+      "type": "checkboxes",
+      "source": "acf/dimming_type",
+      "label_any": "",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "20",
+      "operator": "or",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "show_expanded": "no"
+    },
+    {
+      "name": "output_channels",
+      "label": "Ausgangskan\u00e4le",
+      "type": "checkboxes",
+      "source": "acf/output_channels",
+      "label_any": "",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "20",
+      "operator": "or",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "show_expanded": "no"
+    },
+    {
+      "name": "ip_protection",
+      "label": "IP-Schutzart",
+      "type": "checkboxes",
+      "source": "acf/ip_protection",
+      "label_any": "",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "20",
+      "operator": "or",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "show_expanded": "no"
+    },
+    {
+      "name": "dimension_category",
+      "label": "Baugr\u00f6sse",
+      "type": "checkboxes",
+      "source": "acf/dimension_category",
+      "label_any": "",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "20",
+      "operator": "or",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "show_expanded": "no"
+    },
+    {
+      "name": "input_voltage",
+      "label": "Eingangsspannung",
+      "type": "checkboxes",
+      "source": "acf/input_voltage",
+      "label_any": "",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "20",
+      "operator": "or",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "show_expanded": "no"
+    },
+    {
+      "name": "series_type",
+      "label": "Serien-Typ",
+      "type": "checkboxes",
+      "source": "acf/series_type",
+      "label_any": "",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "20",
+      "operator": "or",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "show_expanded": "no"
+    },
+    {
+      "name": "additional_functions",
+      "label": "Zusatzfunktionen",
+      "type": "checkboxes",
+      "source": "acf/additional_functions",
+      "label_any": "",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "20",
+      "operator": "or",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "show_expanded": "no"
+    },
+    {
+      "name": "manufacturer",
+      "label": "Hersteller",
+      "type": "checkboxes",
+      "source": "acf/manufacturer_brand",
+      "label_any": "",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "20",
+      "operator": "or",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "show_expanded": "no"
+    },
+    {
+      "name": "price_range",
+      "label": "Preis (CHF)",
+      "type": "slider",
+      "source": "woocommerce/price",
+      "compare_type": "",
+      "prefix": "CHF ",
+      "suffix": "",
+      "format": "0,0.00",
+      "step": 1,
+      "slider_range": "auto",
+      "reset_text": "Zur\u00fccksetzen"
+    },
+    {
+      "name": "availability",
+      "label": "Verf\u00fcgbarkeit",
+      "type": "checkboxes",
+      "source": "woocommerce/stock_status",
+      "label_any": "",
+      "parent_term": "",
+      "hierarchical": "no",
+      "orderby": "display_value",
+      "count": "20",
+      "operator": "or",
+      "ghosts": "no",
+      "preserve_ghosts": "no",
+      "soft_limit": 5,
+      "show_expanded": "no"
+    },
+    {
+      "name": "product_search",
+      "label": "Suche",
+      "type": "search",
+      "search_engine": "",
+      "placeholder": "Produkt suchen...",
+      "auto_refresh": "yes",
+      "auto_refresh_delay": 300
+    },
+    {
+      "name": "sort_by",
+      "label": "Sortieren",
+      "type": "sort",
+      "default_label": "Sortieren nach",
+      "sort_options": [
+        {
+          "label": "Relevanz",
+          "name": "relevance",
+          "orderby": "relevance",
+          "order": "DESC"
+        },
+        {
+          "label": "Preis aufsteigend",
+          "name": "price_asc",
+          "orderby": "meta_value_num",
+          "meta_key": "_price",
+          "order": "ASC"
+        },
+        {
+          "label": "Preis absteigend",
+          "name": "price_desc",
+          "orderby": "meta_value_num",
+          "meta_key": "_price",
+          "order": "DESC"
+        },
+        {
+          "label": "Name A-Z",
+          "name": "title_asc",
+          "orderby": "title",
+          "order": "ASC"
+        },
+        {
+          "label": "Neueste",
+          "name": "date_desc",
+          "orderby": "date",
+          "order": "DESC"
+        }
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "name": "led_treiber",
+      "label": "LED-Treiber Produktliste",
+      "query": "product",
+      "template": "",
+      "query_obj": {
+        "post_type": "product",
+        "post_status": "publish",
+        "posts_per_page": 24,
+        "tax_query": [],
+        "meta_query": []
+      },
+      "modes": {
+        "display": "visual",
+        "query": "advanced"
+      },
+      "layout": {
+        "type": "grid",
+        "columns": 3,
+        "grid_gap": 20
+      },
+      "pager": {
+        "type": "numbers",
+        "per_page": 24,
+        "load_more_text": "Mehr laden",
+        "loading_text": "Lade..."
+      }
+    }
+  ],
+  "settings": {
+    "thousands_separator": "'",
+    "decimal_separator": ".",
+    "prefix": "",
+    "suffix": "",
+    "loading_animation": "fade",
+    "separators": "yes",
+    "loading_text": "Lade...",
+    "no_results_text": "Keine Produkte gefunden.",
+    "auto_refresh": "yes"
+  }
+}

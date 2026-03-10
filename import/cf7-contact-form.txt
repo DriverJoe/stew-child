@@ -1,0 +1,344 @@
+================================================================================
+CONTACT FORM 7 — STEW WEBSHOP
+Kontaktformular & Newsletter-Anmeldung
+================================================================================
+
+================================================================================
+FORM 1: Hauptkontaktformular (Kontaktseite)
+================================================================================
+
+--- FORM TITLE ---
+Kontaktformular
+
+--- FORM MARKUP ---
+
+<div class="stew-contact-form">
+
+  <div class="stew-form-row stew-form-row--two-col">
+    <div class="stew-form-field stew-form-field--name">
+      <label for="stew-name">Name <span class="stew-required">*</span></label>
+      [text* your-name id:stew-name class:stew-input placeholder "Ihr vollstaendiger Name"]
+    </div>
+    <div class="stew-form-field stew-form-field--email">
+      <label for="stew-email">E-Mail <span class="stew-required">*</span></label>
+      [email* your-email id:stew-email class:stew-input placeholder "Ihre E-Mail-Adresse"]
+    </div>
+  </div>
+
+  <div class="stew-form-row stew-form-row--two-col">
+    <div class="stew-form-field stew-form-field--phone">
+      <label for="stew-phone">Telefon</label>
+      [tel your-phone id:stew-phone class:stew-input placeholder "+41 XX XXX XX XX"]
+    </div>
+    <div class="stew-form-field stew-form-field--subject">
+      <label for="stew-subject">Betreff <span class="stew-required">*</span></label>
+      [select* your-subject id:stew-subject class:stew-select "Bitte waehlen" "Allgemeine Anfrage" "Produktanfrage" "Grossbestellung" "Technischer Support" "Haendleranfrage"]
+    </div>
+  </div>
+
+  <div class="stew-form-row">
+    <div class="stew-form-field stew-form-field--message">
+      <label for="stew-message">Nachricht <span class="stew-required">*</span></label>
+      [textarea* your-message id:stew-message class:stew-textarea x4 placeholder "Wie koennen wir Ihnen helfen?"]
+    </div>
+  </div>
+
+  <div class="stew-form-row">
+    <div class="stew-form-field stew-form-field--privacy">
+      [acceptance privacy-acceptance class:stew-checkbox] Ich habe die <a href="/datenschutz" target="_blank">Datenschutzerklaerung</a> gelesen und stimme der Verarbeitung meiner Daten zu. <span class="stew-required">*</span> [/acceptance]
+    </div>
+  </div>
+
+  <div class="stew-form-row stew-form-row--submit">
+    [submit class:stew-submit-btn "Nachricht senden"]
+  </div>
+
+</div>
+
+--- MAIL (Admin-Benachrichtigung) ---
+
+An:          info@stew.ch
+Von:         STEW Webshop <wordpress@stew.ch>
+Betreff:     [Kontaktformular] [your-subject] von [your-name]
+Antwort an:  [your-email]
+
+Zusaetzliche Header:
+Reply-To: [your-email]
+
+Nachrichtentext:
+----------------------------------------------
+Neue Kontaktanfrage ueber das STEW Webshop-Formular
+----------------------------------------------
+
+Name:       [your-name]
+E-Mail:     [your-email]
+Telefon:    [your-phone]
+Betreff:    [your-subject]
+
+Nachricht:
+[your-message]
+
+----------------------------------------------
+Gesendet am: [_date] um [_time]
+IP-Adresse:  [_remote_ip]
+Seite:       [_url]
+User-Agent:  [_user_agent]
+----------------------------------------------
+
+--- MAIL (2) — Automatische Bestaetigung an Kunden ---
+
+An:          [your-email]
+Von:         STEW GmbH <info@stew.ch>
+Betreff:     Ihre Anfrage bei STEW — Bestaetigung
+Antwort an:  info@stew.ch
+
+Nachrichtentext:
+Guten Tag [your-name],
+
+vielen Dank fuer Ihre Nachricht. Wir haben Ihre Anfrage erhalten und werden uns so schnell wie moeglich bei Ihnen melden — in der Regel innerhalb von 1-2 Werktagen.
+
+Zusammenfassung Ihrer Anfrage:
+----------------------------------------------
+Betreff:    [your-subject]
+Nachricht:  [your-message]
+----------------------------------------------
+
+Sollten Sie in der Zwischenzeit weitere Fragen haben, erreichen Sie uns unter:
+
+Telefon:  +41 XX XXX XX XX
+E-Mail:   info@stew.ch
+
+Freundliche Gruesse
+Ihr STEW Team
+
+---
+STEW GmbH
+Professionelle LED-Beleuchtung
+www.stew.ch
+
+--- NACHRICHTEN (Formular-Feedback) ---
+
+Erfolgsmeldung:
+Vielen Dank fuer Ihre Nachricht. Wir werden uns schnellstmoeglich bei Ihnen melden.
+
+Fehlermeldung:
+Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter info@stew.ch.
+
+Validierungsfehler:
+Bitte fuellen Sie alle Pflichtfelder (*) korrekt aus.
+
+Spam-Erkennung:
+Ihre Nachricht wurde als Spam erkannt. Bitte kontaktieren Sie uns direkt unter info@stew.ch.
+
+Akzeptanz nicht erteilt:
+Bitte akzeptieren Sie die Datenschutzerklaerung, um das Formular absenden zu koennen.
+
+
+================================================================================
+FORM 2: Newsletter-Anmeldung
+================================================================================
+
+--- FORM TITLE ---
+Newsletter-Anmeldung
+
+--- FORM MARKUP ---
+
+<div class="stew-newsletter-form">
+  <div class="stew-newsletter-form__inner">
+    <div class="stew-form-field stew-form-field--newsletter-email">
+      [email* newsletter-email id:stew-newsletter-email class:stew-newsletter-input placeholder "Ihre E-Mail-Adresse"]
+    </div>
+    <div class="stew-form-field stew-form-field--newsletter-submit">
+      [submit class:stew-newsletter-btn "Anmelden"]
+    </div>
+  </div>
+  <div class="stew-newsletter-form__privacy">
+    <small>Mit der Anmeldung akzeptieren Sie unsere <a href="/datenschutz">Datenschutzerklaerung</a>.</small>
+  </div>
+</div>
+
+--- MAIL (Admin-Benachrichtigung) ---
+
+An:          info@stew.ch
+Von:         STEW Webshop <wordpress@stew.ch>
+Betreff:     [Newsletter] Neue Anmeldung
+
+Nachrichtentext:
+----------------------------------------------
+Neue Newsletter-Anmeldung
+----------------------------------------------
+
+E-Mail: [newsletter-email]
+
+Angemeldet am: [_date] um [_time]
+----------------------------------------------
+
+Bitte diese E-Mail-Adresse in der Newsletter-Liste (Mailchimp/Brevo) erfassen.
+
+--- MAIL (2) — Bestaetigung an Abonnent ---
+
+An:          [newsletter-email]
+Von:         STEW GmbH <info@stew.ch>
+Betreff:     Willkommen beim STEW Newsletter
+
+Nachrichtentext:
+Guten Tag,
+
+vielen Dank fuer Ihre Anmeldung zum STEW Newsletter!
+
+Sie erhalten ab sofort regelmaessig Informationen zu:
+- Neuen Produkten und Aktionen
+- Technischen Tipps zur LED-Beleuchtung
+- Exklusiven Angeboten fuer Newsletter-Abonnenten
+
+Sollten Sie den Newsletter nicht mehr erhalten wollen, koennen Sie sich jederzeit abmelden.
+
+Freundliche Gruesse
+Ihr STEW Team
+
+---
+STEW GmbH
+Professionelle LED-Beleuchtung
+www.stew.ch
+
+--- NACHRICHTEN (Formular-Feedback) ---
+
+Erfolgsmeldung:
+Vielen Dank fuer Ihre Anmeldung! Sie erhalten in Kuerze eine Bestaetigung per E-Mail.
+
+Fehlermeldung:
+Die Anmeldung konnte nicht verarbeitet werden. Bitte versuchen Sie es erneut.
+
+
+================================================================================
+FORM 3: Produktanfrage (Auf Produktseiten via Shortcode)
+================================================================================
+
+--- FORM TITLE ---
+Produktanfrage
+
+--- FORM MARKUP ---
+
+<div class="stew-product-inquiry-form">
+
+  <p class="stew-form-intro">Sie haben Fragen zu diesem Produkt oder moechten ein Angebot fuer groessere Mengen?</p>
+
+  <div class="stew-form-row stew-form-row--two-col">
+    <div class="stew-form-field">
+      <label>Name <span class="stew-required">*</span></label>
+      [text* inquiry-name class:stew-input placeholder "Ihr Name"]
+    </div>
+    <div class="stew-form-field">
+      <label>E-Mail <span class="stew-required">*</span></label>
+      [email* inquiry-email class:stew-input placeholder "Ihre E-Mail"]
+    </div>
+  </div>
+
+  <div class="stew-form-row stew-form-row--two-col">
+    <div class="stew-form-field">
+      <label>Firma</label>
+      [text inquiry-company class:stew-input placeholder "Firmenname (optional)"]
+    </div>
+    <div class="stew-form-field">
+      <label>Gewuenschte Menge</label>
+      [number inquiry-quantity class:stew-input min:1 placeholder "Stueckzahl"]
+    </div>
+  </div>
+
+  <div class="stew-form-row">
+    <div class="stew-form-field">
+      <label>Ihre Anfrage <span class="stew-required">*</span></label>
+      [textarea* inquiry-message class:stew-textarea x3 placeholder "Beschreiben Sie Ihre Anfrage..."]
+    </div>
+  </div>
+
+  [hidden inquiry-product-name default:get]
+  [hidden inquiry-product-url default:get]
+
+  <div class="stew-form-row">
+    <div class="stew-form-field stew-form-field--privacy">
+      [acceptance inquiry-privacy class:stew-checkbox] Ich stimme der <a href="/datenschutz" target="_blank">Datenschutzerklaerung</a> zu. * [/acceptance]
+    </div>
+  </div>
+
+  <div class="stew-form-row stew-form-row--submit">
+    [submit class:stew-submit-btn "Anfrage senden"]
+  </div>
+
+</div>
+
+--- MAIL (Admin-Benachrichtigung) ---
+
+An:          info@stew.ch
+Von:         STEW Webshop <wordpress@stew.ch>
+Betreff:     [Produktanfrage] von [inquiry-name]
+Antwort an:  [inquiry-email]
+
+Nachrichtentext:
+----------------------------------------------
+Neue Produktanfrage
+----------------------------------------------
+
+Produkt:    [inquiry-product-name]
+Produkt-URL: [inquiry-product-url]
+
+Name:       [inquiry-name]
+E-Mail:     [inquiry-email]
+Firma:      [inquiry-company]
+Menge:      [inquiry-quantity]
+
+Anfrage:
+[inquiry-message]
+
+----------------------------------------------
+Gesendet am: [_date] um [_time]
+----------------------------------------------
+
+--- MAIL (2) — Bestaetigung ---
+
+An:          [inquiry-email]
+Von:         STEW GmbH <info@stew.ch>
+Betreff:     Ihre Produktanfrage bei STEW — Bestaetigung
+
+Nachrichtentext:
+Guten Tag [inquiry-name],
+
+vielen Dank fuer Ihre Produktanfrage. Wir werden Ihnen schnellstmoeglich ein Angebot unterbreiten.
+
+Angefragtes Produkt: [inquiry-product-name]
+Gewuenschte Menge:   [inquiry-quantity]
+
+Freundliche Gruesse
+Ihr STEW Team
+
+---
+STEW GmbH
+www.stew.ch
+
+
+================================================================================
+CSS-KLASSEN REFERENZ
+================================================================================
+
+.stew-contact-form          — Hauptcontainer Kontaktformular
+.stew-newsletter-form       — Hauptcontainer Newsletter
+.stew-product-inquiry-form  — Hauptcontainer Produktanfrage
+.stew-form-row              — Formularzeile
+.stew-form-row--two-col     — Zweispaltiges Layout
+.stew-form-row--submit      — Submit-Zeile
+.stew-form-field            — Einzelnes Feld
+.stew-form-field--name      — Namensfeld
+.stew-form-field--email     — E-Mail-Feld
+.stew-form-field--phone     — Telefonfeld
+.stew-form-field--subject   — Betreff-Feld
+.stew-form-field--message   — Nachrichtenfeld
+.stew-form-field--privacy   — Datenschutz-Checkbox
+.stew-input                 — Text/Email/Tel Input
+.stew-select                — Dropdown Select
+.stew-textarea              — Textarea
+.stew-checkbox              — Checkbox
+.stew-submit-btn            — Submit Button
+.stew-newsletter-input      — Newsletter E-Mail Input
+.stew-newsletter-btn        — Newsletter Submit Button
+.stew-required              — Pflichtfeld-Markierung
+.stew-form-intro            — Einleitungstext

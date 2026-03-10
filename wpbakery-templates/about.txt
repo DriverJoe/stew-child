@@ -1,0 +1,106 @@
+<!-- ============================================
+     STEW Über uns (About Us)
+     WPBakery Page Builder Template
+     ============================================ -->
+
+<!-- SECTION 1: Page Header -->
+[vc_row css=".vc_custom_stew_header{padding-top: 60px; padding-bottom: 60px; background-color: #F8F8F8;}"][vc_column width="1/1"]
+
+[vc_column_text]
+<p style="font-size: 0.8125rem; color: #737373; margin-bottom: 0.5rem;"><a href="/" style="color: #737373; text-decoration: none;">Startseite</a> / Über uns</p>
+<h1 style="font-size: 2.5rem; font-weight: 600;">Über STEW</h1>
+[/vc_column_text]
+
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 2: Company Story -->
+[vc_row css=".vc_custom_stew_story{padding-top: 80px; padding-bottom: 80px;}"][vc_column width="1/2"]
+
+[vc_column_text]
+<h2 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #737373; margin-bottom: 0.5rem;">UNSERE GESCHICHTE</h2>
+<h3 style="font-size: 2rem; font-weight: 600; margin-bottom: 1.5rem;">Ihr Partner für professionelle LED-Beleuchtung</h3>
+<p style="font-size: 1rem; line-height: 1.7; color: #737373; margin-bottom: 1.5rem;">STEW – ein Unternehmen der LG Lightguide AG – ist Ihr Partner für professionelle LED-Beleuchtung in der Schweiz. Wir bieten ein sorgfältig ausgewähltes Sortiment an hochwertigen Leuchten und LED-Treibern für anspruchsvolle Projekte.</p>
+<p style="font-size: 1rem; line-height: 1.7; color: #737373;">Unsere Kunden – Architekten, Lichtplaner und Elektroinstallateure – schätzen unsere technische Kompetenz, persönliche Beratung und die Qualität unserer Produkte. Wir arbeiten mit führenden europäischen Herstellern zusammen, um Ihnen stets die beste Lösung für Ihre Beleuchtungsprojekte zu bieten.</p>
+[/vc_column_text]
+
+[/vc_column][vc_column width="1/2"]
+
+[vc_single_image image="" img_size="large" css=".vc_custom_stew_story_img{border-radius: 2px;}"]
+
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 3: Values / USPs -->
+[vc_row css=".vc_custom_stew_values{padding-top: 80px; padding-bottom: 80px; background-color: #F8F8F8;}"][vc_column width="1/1"]
+
+[vc_column_text css=".vc_custom_stew_center{text-align: center; margin-bottom: 3rem;}"]
+<h2 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #737373; margin-bottom: 0.5rem;">WARUM STEW</h2>
+<h3 style="font-size: 2rem; font-weight: 600;">Unsere Werte</h3>
+[/vc_column_text]
+
+[/vc_column][/vc_row]
+
+[vc_row css=".vc_custom_stew_values_grid{padding-bottom: 80px; background-color: #F8F8F8;}"][vc_column width="1/3" css=".vc_custom_stew_usp{text-align: center; padding: 2rem;}"]
+
+[nectar_icon icon_family="iconsmind" icon_iconsmind="iconsmind-Diamond" icon_color="extra-color-1" icon_size="60"]
+[vc_column_text]
+<h4 style="font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.75rem;">Schweizer Qualität</h4>
+<p style="font-size: 0.875rem; color: #737373; line-height: 1.6;">Sorgfältig ausgewählte Produkte führender europäischer Hersteller. Jedes Produkt erfüllt höchste Qualitätsstandards.</p>
+[/vc_column_text]
+
+[/vc_column][vc_column width="1/3" css=".vc_custom_stew_usp{text-align: center; padding: 2rem;}"]
+
+[nectar_icon icon_family="iconsmind" icon_iconsmind="iconsmind-Gear" icon_color="extra-color-1" icon_size="60"]
+[vc_column_text]
+<h4 style="font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.75rem;">Technische Kompetenz</h4>
+<p style="font-size: 0.875rem; color: #737373; line-height: 1.6;">Fundierte Beratung zu allen Fragen der LED-Beleuchtung. Unser Team verfügt über langjährige Erfahrung in der Lichtplanung.</p>
+[/vc_column_text]
+
+[/vc_column][vc_column width="1/3" css=".vc_custom_stew_usp{text-align: center; padding: 2rem;}"]
+
+[nectar_icon icon_family="iconsmind" icon_iconsmind="iconsmind-Handshake" icon_color="extra-color-1" icon_size="60"]
+[vc_column_text]
+<h4 style="font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.75rem;">Persönlicher Service</h4>
+<p style="font-size: 0.875rem; color: #737373; line-height: 1.6;">Individuelle Betreuung und schnelle Lieferung in der Schweiz. Persönlicher Ansprechpartner für jedes Projekt.</p>
+[/vc_column_text]
+
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 4: Brands / Partners -->
+[vc_row css=".vc_custom_stew_brands{padding-top: 80px; padding-bottom: 80px;}"][vc_column width="1/1"]
+
+[vc_column_text css=".vc_custom_stew_center{text-align: center; margin-bottom: 3rem;}"]
+<h2 style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #737373; margin-bottom: 0.5rem;">PARTNER</h2>
+<h3 style="font-size: 2rem; font-weight: 600;">Unsere Marken</h3>
+[/vc_column_text]
+
+[/vc_column][/vc_row]
+
+[vc_row css=".vc_custom_stew_logos{padding-bottom: 80px;}"][vc_column width="1/6"]
+[vc_single_image image="" img_size="medium" alignment="center" el_class="stew-brand-logo"]
+[/vc_column][vc_column width="1/6"]
+[vc_single_image image="" img_size="medium" alignment="center" el_class="stew-brand-logo"]
+[/vc_column][vc_column width="1/6"]
+[vc_single_image image="" img_size="medium" alignment="center" el_class="stew-brand-logo"]
+[/vc_column][vc_column width="1/6"]
+[vc_single_image image="" img_size="medium" alignment="center" el_class="stew-brand-logo"]
+[/vc_column][vc_column width="1/6"]
+[vc_single_image image="" img_size="medium" alignment="center" el_class="stew-brand-logo"]
+[/vc_column][vc_column width="1/6"]
+[vc_single_image image="" img_size="medium" alignment="center" el_class="stew-brand-logo"]
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 5: Contact CTA -->
+[vc_row css=".vc_custom_stew_cta{padding-top: 60px; padding-bottom: 60px; border-top: 1px solid #E8E5E0;}"][vc_column width="1/1" css=".vc_custom_stew_cta_center{text-align: center;}"]
+
+[vc_column_text]
+<h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Kontaktieren Sie uns</h3>
+<p style="color: #737373; margin-bottom: 1.5rem;">Haben Sie Fragen zu unseren Produkten oder benötigen Sie eine Beratung? Wir helfen Ihnen gerne weiter.</p>
+[/vc_column_text]
+
+[nectar_btn size="medium" button_style="regular" button_color_2="#1A1A1A" icon_family="none" url="/kontakt/" text="Kontakt aufnehmen"]
+
+[/vc_column][/vc_row]

@@ -1,0 +1,102 @@
+<!-- ============================================
+     STEW Kontakt (Contact)
+     WPBakery Page Builder Template
+     ============================================ -->
+
+<!-- SECTION 1: Page Header -->
+[vc_row css=".vc_custom_stew_header{padding-top: 60px; padding-bottom: 60px; background-color: #F8F8F8;}"][vc_column width="1/1"]
+
+[vc_column_text]
+<p style="font-size: 0.8125rem; color: #737373; margin-bottom: 0.5rem;"><a href="/" style="color: #737373; text-decoration: none;">Startseite</a> / Kontakt</p>
+<h1 style="font-size: 2.5rem; font-weight: 600;">Kontakt</h1>
+<p style="font-size: 1.125rem; color: #737373; margin-top: 0.5rem;">Wir freuen uns auf Ihre Nachricht</p>
+[/vc_column_text]
+
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 2: Contact Form + Details -->
+[vc_row css=".vc_custom_stew_contact{padding-top: 80px; padding-bottom: 80px;}"][vc_column width="2/3"]
+
+[vc_column_text]
+<h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem;">Schreiben Sie uns</h3>
+[/vc_column_text]
+
+[contact-form-7 id="contact" title="Kontaktformular"]
+
+<!-- CF7 Form Markup (paste into CF7 form editor):
+
+<div class="stew-form-grid">
+  <div class="stew-form-row stew-form-row--half">
+    <div class="stew-form-field">
+      <label>Name *</label>
+      [text* your-name placeholder "Ihr Name"]
+    </div>
+    <div class="stew-form-field">
+      <label>E-Mail *</label>
+      [email* your-email placeholder "Ihre E-Mail-Adresse"]
+    </div>
+  </div>
+  <div class="stew-form-row stew-form-row--half">
+    <div class="stew-form-field">
+      <label>Telefon</label>
+      [tel your-phone placeholder "Ihre Telefonnummer"]
+    </div>
+    <div class="stew-form-field">
+      <label>Betreff *</label>
+      [select* your-subject "Allgemeine Anfrage" "Produktanfrage" "Grossbestellung" "Technischer Support" "Händleranfrage"]
+    </div>
+  </div>
+  <div class="stew-form-row">
+    <div class="stew-form-field">
+      <label>Nachricht *</label>
+      [textarea* your-message placeholder "Ihre Nachricht..."]
+    </div>
+  </div>
+  <div class="stew-form-row">
+    [acceptance privacy-policy] Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und akzeptiere diese. [/acceptance]
+  </div>
+  <div class="stew-form-row">
+    [submit class:stew-btn class:stew-btn--primary "Nachricht senden"]
+  </div>
+</div>
+
+-->
+
+[/vc_column][vc_column width="1/3"]
+
+[vc_column_text css=".vc_custom_stew_details{padding: 2rem; background-color: #F8F8F8; border-radius: 2px;}"]
+<h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 1.5rem;">Kontaktdaten</h4>
+
+<p style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.25rem;">LG Lightguide AG / STEW</p>
+<p style="font-size: 0.875rem; color: #737373; margin-bottom: 1.5rem;">
+Musterstrasse 123<br>
+8000 Zürich<br>
+Schweiz
+</p>
+
+<p style="font-size: 0.875rem; margin-bottom: 0.5rem;">
+<strong>Telefon:</strong><br>
+<a href="tel:+41441234567" style="color: #737373; text-decoration: none;">+41 44 123 45 67</a>
+</p>
+
+<p style="font-size: 0.875rem; margin-bottom: 0.5rem;">
+<strong>E-Mail:</strong><br>
+<a href="mailto:info@stew.ch" style="color: #737373; text-decoration: none;">info@stew.ch</a>
+</p>
+
+<p style="font-size: 0.875rem; margin-bottom: 0;">
+<strong>Öffnungszeiten:</strong><br>
+<span style="color: #737373;">Mo – Fr: 08:00 – 17:00 Uhr</span>
+</p>
+[/vc_column_text]
+
+[/vc_column][/vc_row]
+
+
+<!-- SECTION 3: Map -->
+[vc_row full_width="stretch_row_content_no_spaces" css=".vc_custom_stew_map{padding: 0;}"][vc_column width="1/1"]
+
+[vc_gmaps link="https://www.google.com/maps?q=Zürich,+Schweiz" size="400" el_class="stew-map"]
+
+[/vc_column][/vc_row]
