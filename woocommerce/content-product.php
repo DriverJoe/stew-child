@@ -3,7 +3,7 @@
  * Product card template for shop/category loops
  *
  * @package STEW_Child
- * @version 1.0.0
+ * @version 9.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

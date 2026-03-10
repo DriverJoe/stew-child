@@ -272,3 +272,67 @@ function stew_body_classes( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'stew_body_classes' );
+
+/**
+ * Product page: Add highlights box after add-to-cart
+ */
+function stew_product_highlights() {
+    global $product;
+    $pid = $product->get_id();
+
+    $power      = get_post_meta( $pid, 'power_watts', true );
+    $ip         = get_post_meta( $pid, 'ip_protection', true );
+    $dimming    = get_post_meta( $pid, 'dimming_type', true );
+    $voltage    = get_post_meta( $pid, 'input_voltage', true );
+    $sku        = $product->get_sku();
+
+    $items = array();
+    if ( $power )   $items[] = $power . ' Watt Leistung';
+    if ( $ip )      $items[] = 'Schutzart ' . $ip;
+    if ( $dimming ) $items[] = is_array( $dimming ) ? implode( ', ', $dimming ) : $dimming;
+    if ( $voltage ) $items[] = $voltage;
+    if ( $sku )     $items[] = 'Art.-Nr.: ' . $sku;
+
+    if ( empty( $items ) ) return;
+
+    echo '<div class="stew-product-highlights" style="margin-top:1.5rem;padding:1.5rem;background:#F8F8F8;border-radius:2px;">';
+    echo '<ul style="list-style:none;padding:0;margin:0;">';
+    foreach ( $items as $item ) {
+        echo '<li style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.4rem 0;font-size:0.875rem;">';
+        echo '<span style="color:#C9A96E;font-weight:700;flex-shrink:0;">&#10003;</span>';
+        echo esc_html( $item );
+        echo '</li>';
+    }
+    echo '</ul></div>';
+
+    // Datasheet button
+    $datasheet = get_post_meta( $pid, 'datasheet_pdf', true );
+    if ( $datasheet ) {
+        echo '<div style="margin-top:1rem;">';
+        echo '<a href="' . esc_url( $datasheet ) . '" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:#F8F8F8;border:1px solid #E8E5E0;border-radius:2px;font-size:0.875rem;font-weight:500;color:#1A1A1A;text-decoration:none;">';
+        echo esc_html__( 'Datenblatt herunterladen', 'stew-child' );
+        echo '</a></div>';
+    }
+}
+add_action( 'woocommerce_single_product_summary', 'stew_product_highlights', 35 );
+
+/**
+ * Product page: Add manufacturer name below title
+ */
+function stew_product_manufacturer() {
+    $manufacturer = get_post_meta( get_the_ID(), 'manufacturer_brand', true );
+    if ( $manufacturer ) {
+        echo '<p style="color:#737373;font-size:0.875rem;margin:-0.5rem 0 1rem;">' . esc_html( $manufacturer ) . '</p>';
+    }
+}
+add_action( 'woocommerce_single_product_summary', 'stew_product_manufacturer', 6 );
+
+/**
+ * Related products: show 4 in one row
+ */
+function stew_related_products_args( $args ) {
+    $args['posts_per_page'] = 4;
+    $args['columns']        = 4;
+    return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'stew_related_products_args' );

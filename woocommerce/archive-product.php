@@ -3,7 +3,7 @@
  * Shop / Product Category archive template
  *
  * @package STEW_Child
- * @version 1.0.0
+ * @version 8.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

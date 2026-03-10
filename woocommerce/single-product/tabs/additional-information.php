@@ -3,7 +3,7 @@
  * Additional Information tab — shows ACF technical specs
  *
  * @package STEW_Child
- * @version 1.0.0
+ * @version 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -45,7 +45,7 @@ $spec_fields = array(
 // Collect non-empty specs
 $filled_specs = array();
 foreach ( $spec_fields as $field_key => $label ) {
-    $value = get_field( $field_key );
+    $value = get_post_meta( get_the_ID(), $field_key, true );
     if ( ! empty( $value ) ) {
         if ( is_array( $value ) ) {
             $value = implode( ', ', $value );
@@ -99,7 +99,7 @@ $attributes = $product->get_attributes();
 
     <?php
     // Datasheet download
-    $datasheet = get_field( 'datasheet_pdf' );
+    $datasheet = get_post_meta( get_the_ID(), 'datasheet_pdf', true );
     if ( $datasheet ) :
     ?>
         <p style="margin-top: 1.5rem;">
