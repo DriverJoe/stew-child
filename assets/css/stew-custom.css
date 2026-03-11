@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 /**
  * STEW Custom Styles
  * Swiss-minimal design for professional LED lighting webshop
@@ -47,11 +49,6 @@
 }
 
 /* ============================================
-   Font Import
-   ============================================ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-/* ============================================
    Base / Typography
    ============================================ */
 html {
@@ -64,10 +61,13 @@ body.stew-theme .container-wrap,
 body.stew-theme .main-content {
     font-family: var(--stew-font) !important;
     color: var(--stew-text) !important;
-    background-color: var(--stew-white) !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6 !important;
+}
+/* Default page background — does not override WPBakery row backgrounds */
+body.stew-theme {
+    background-color: var(--stew-white);
 }
 
 body.stew-theme h1,
@@ -91,10 +91,9 @@ body.stew-theme .vc_column_container h3 {
     line-height: 1.2 !important;
 }
 
-/* Force Inter font on all Salient text elements */
+/* Force Inter font on Salient text elements — exclude span to preserve icon fonts */
 body.stew-theme p,
 body.stew-theme a,
-body.stew-theme span,
 body.stew-theme li,
 body.stew-theme input,
 body.stew-theme button,
@@ -103,6 +102,10 @@ body.stew-theme textarea,
 body.stew-theme .wpb_text_column,
 body.stew-theme .nectar-cta,
 body.stew-theme .wpb_content_element {
+    font-family: var(--stew-font) !important;
+}
+/* Apply font to spans but exclude icon font classes */
+body.stew-theme span:not([class*="fa-"]):not([class*="icon-"]):not([class*="nectar-icon"]):not(.fa):not(.icon) {
     font-family: var(--stew-font) !important;
 }
 
@@ -612,7 +615,7 @@ body.stew-theme #header-outer header#top nav > ul > li > a {
 /* ============================================
    Product Cards (WooCommerce) — Premium
    ============================================ */
-.stew-theme .products,
+/* Product grid: only apply grid to our custom class; let Salient handle .products */
 .stew-product-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -622,15 +625,18 @@ body.stew-theme #header-outer header#top nav > ul > li > a {
     margin: 0;
 }
 
+.stew-theme .products {
+    list-style: none;
+    gap: 1.5rem;
+}
+
 @media (min-width: 640px) {
-    .stew-theme .products,
     .stew-product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 1024px) {
-    .stew-theme .products,
     .stew-product-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -646,8 +652,7 @@ body.stew-theme .products .product.material {
     overflow: hidden !important;
     transition: var(--stew-transition-slow) !important;
     list-style: none;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin-bottom: 1.5rem !important;
 }
 
 .stew-product-card:hover,
@@ -1705,7 +1710,7 @@ body.stew-theme ul.products li.product .price .woocommerce-Price-amount {
 body.stew-theme .container-wrap,
 body.stew-theme #ajax-content-wrap .container-wrap,
 body.stew-theme .container-wrap .main-content {
-    background-color: var(--stew-white) !important;
+    background-color: var(--stew-white);
 }
 
 body.stew-theme .wpb_row,

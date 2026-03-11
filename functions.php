@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'STEW_CHILD_VERSION', '1.1.0' );
+define( 'STEW_CHILD_VERSION', '1.2.0' );
 define( 'STEW_CHILD_DIR', get_stylesheet_directory() );
 define( 'STEW_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -57,7 +57,7 @@ function stew_enqueue_assets() {
         'nonce'   => wp_create_nonce( 'stew_nonce' ),
     ) );
 }
-add_action( 'wp_enqueue_scripts', 'stew_enqueue_assets', 20 );
+add_action( 'wp_enqueue_scripts', 'stew_enqueue_assets', 9999 );
 
 /**
  * WooCommerce support
@@ -197,19 +197,7 @@ function stew_add_customer_caps() {
 }
 add_action( 'admin_init', 'stew_add_customer_caps' );
 
-/**
- * Trade pricing login prompt for non-logged-in users
- */
-function stew_trade_pricing_notice() {
-    if ( ! is_user_logged_in() && ( is_shop() || is_product_category() || is_product() ) ) {
-        echo '<div class="stew-trade-notice">';
-        echo '<p><a href="' . esc_url( wp_login_url( get_permalink() ) ) . '">';
-        echo esc_html__( 'Einloggen für Händlerpreise', 'stew-child' );
-        echo '</a></p></div>';
-    }
-}
-add_action( 'woocommerce_before_shop_loop', 'stew_trade_pricing_notice', 5 );
-add_action( 'woocommerce_single_product_summary', 'stew_trade_pricing_notice', 15 );
+/* Trade pricing notice is handled by import/role-based-pricing.php */
 
 /**
  * ACF JSON save point
@@ -252,14 +240,7 @@ function stew_loop_columns() {
 }
 add_filter( 'loop_shop_columns', 'stew_loop_columns' );
 
-/**
- * Disable WooCommerce default styles selectively
- */
-function stew_dequeue_wc_styles( $enqueue_styles ) {
-    // Keep core WooCommerce styles but let our CSS override
-    return $enqueue_styles;
-}
-add_filter( 'woocommerce_enqueue_styles', 'stew_dequeue_wc_styles' );
+/* WooCommerce default styles are kept; our CSS overrides them via higher priority */
 
 /**
  * Add body classes for STEW styling
