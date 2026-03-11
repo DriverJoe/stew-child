@@ -2,6 +2,7 @@
  * STEW Custom Styles
  * Swiss-minimal design for professional LED lighting webshop
  * Inspired by Flos, Artemide, Erco aesthetics
+ * Modernized: glassmorphism header, refined animations, premium feel
  */
 
 /* ============================================
@@ -14,11 +15,13 @@
     --stew-card-bg: #FDFCFA;
     --stew-muted-bg: #F5F5F2;
     --stew-border: #E8E5E0;
+    --stew-border-subtle: rgba(232, 229, 224, 0.5);
     --stew-text: #1A1A1A;
     --stew-text-muted: #737373;
     --stew-primary: hsl(38, 80%, 50%);
     --stew-primary-soft: hsl(38, 60%, 95%);
     --stew-primary-dark: hsl(38, 80%, 40%);
+    --stew-primary-glow: hsl(38, 100%, 70%);
     --stew-dark: #1A1A1A;
     --stew-dark-lighter: #2A2A2A;
     --stew-badge-soldout: #F5F5F0;
@@ -34,11 +37,13 @@
     --stew-section-padding: 80px;
     --stew-section-padding-mobile: 48px;
     --stew-container-max: 1280px;
-    --stew-radius: 2px;
+    --stew-radius: 6px;
+    --stew-radius-sm: 4px;
 
     /* Transitions */
-    --stew-transition: all 0.3s ease;
-    --stew-transition-slow: all 0.5s ease;
+    --stew-transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --stew-transition-slow: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --stew-transition-fast: all 0.2s ease;
 }
 
 /* ============================================
@@ -49,6 +54,10 @@
 /* ============================================
    Base / Typography
    ============================================ */
+html {
+    scroll-behavior: smooth;
+}
+
 body.stew-theme {
     font-family: var(--stew-font);
     color: var(--stew-text);
@@ -80,6 +89,30 @@ body.stew-theme {
     margin-bottom: 2rem;
 }
 
+/* Decorative section label with lines */
+.stew-section-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.stew-section-label__line {
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--stew-primary);
+}
+
+.stew-section-label__text {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--stew-letter-spacing-wide);
+    color: var(--stew-text-muted);
+}
+
 .stew-section-title {
     font-size: 2rem;
     font-weight: 600;
@@ -91,6 +124,71 @@ body.stew-theme {
         font-size: 2.5rem;
     }
 }
+
+/* Decorative divider */
+.stew-divider {
+    width: 3rem;
+    height: 1px;
+    background: var(--stew-primary);
+    margin: 0 auto 1.5rem;
+}
+
+/* ============================================
+   Animations & Keyframes
+   ============================================ */
+@keyframes stew-fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stew-fade-in-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stew-slide-down {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stew-scale-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes stew-badge-pop {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.stew-animate-fade-in {
+    animation: stew-fade-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stew-animate-fade-in-up {
+    animation: stew-fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stew-animate-slide-down {
+    animation: stew-slide-down 0.3s ease-out forwards;
+}
+
+.stew-animate-scale-in {
+    animation: stew-scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger children animation */
+.stew-stagger > * {
+    opacity: 0;
+    animation: stew-fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.stew-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stew-stagger > *:nth-child(2) { animation-delay: 80ms; }
+.stew-stagger > *:nth-child(3) { animation-delay: 160ms; }
+.stew-stagger > *:nth-child(4) { animation-delay: 240ms; }
+.stew-stagger > *:nth-child(5) { animation-delay: 320ms; }
+.stew-stagger > *:nth-child(6) { animation-delay: 400ms; }
 
 /* ============================================
    Layout / Container
@@ -129,7 +227,7 @@ body.stew-theme {
     text-transform: none;
     letter-spacing: 0.02em;
     border: none;
-    border-radius: 0;
+    border-radius: var(--stew-radius);
     cursor: pointer;
     transition: var(--stew-transition);
     text-decoration: none;
@@ -150,6 +248,8 @@ body.stew-theme {
 .stew-theme .woocommerce input.button.alt:hover {
     background-color: var(--stew-dark-lighter);
     color: var(--stew-white);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .stew-btn--outline {
@@ -160,6 +260,7 @@ body.stew-theme {
 
 .stew-btn--outline:hover {
     border-color: var(--stew-text);
+    transform: translateY(-1px);
 }
 
 .stew-btn--gold {
@@ -169,20 +270,43 @@ body.stew-theme {
 
 .stew-btn--gold:hover {
     background-color: var(--stew-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(201, 169, 110, 0.3);
+}
+
+/* Ghost button for hero on dark backgrounds */
+.stew-btn--ghost {
+    background-color: transparent;
+    color: var(--stew-white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.stew-btn--ghost:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ============================================
-   Navigation / Header
+   Navigation / Header — Frosted Glass
    ============================================ */
 .stew-theme #header-outer {
-    background-color: var(--stew-white) !important;
-    border-bottom: 1px solid var(--stew-border);
-    box-shadow: none !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--stew-border-subtle);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
 .stew-theme #header-outer[data-transparent-header="true"] {
     background-color: transparent !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     border-bottom: none;
+    box-shadow: none !important;
+}
+
+/* Logo with gold accent dot */
+.stew-theme #header-outer .logo-spacing a .stew-logo-dot {
+    color: var(--stew-primary);
 }
 
 .stew-theme #header-outer .nav-menu > li > a {
@@ -191,15 +315,73 @@ body.stew-theme {
     font-weight: 500;
     color: var(--stew-text);
     letter-spacing: 0.02em;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Animated underline on nav links */
+.stew-theme #header-outer .nav-menu > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--stew-primary);
+    transition: width 0.3s ease;
+}
+
+.stew-theme #header-outer .nav-menu > li > a:hover::after,
+.stew-theme #header-outer .nav-menu > li.current-menu-item > a::after {
+    width: 100%;
 }
 
 .stew-theme #header-outer .nav-menu > li > a:hover {
     color: var(--stew-primary);
 }
 
+/* Header icon buttons */
+.stew-theme #header-outer .header-button,
+.stew-theme #header-outer .cart-menu-wrap,
+.stew-theme #header-outer .nectar-header-search {
+    border-radius: 50%;
+    transition: var(--stew-transition-fast);
+}
+
+.stew-theme #header-outer .header-button:hover,
+.stew-theme #header-outer .cart-menu-wrap:hover {
+    background-color: var(--stew-muted-bg);
+}
+
+/* Dropdown menus - frosted glass */
+.stew-theme #header-outer .sub-menu {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid var(--stew-border-subtle);
+    border-radius: var(--stew-radius);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    animation: stew-fade-in 0.2s ease-out;
+}
+
+.stew-theme #header-outer .sub-menu li a {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    transition: var(--stew-transition-fast);
+}
+
+.stew-theme #header-outer .sub-menu li a:hover {
+    background-color: var(--stew-muted-bg);
+    color: var(--stew-primary);
+}
+
+/* Cart badge animation */
+.stew-theme .cart-wrap .cart-icon-wrap .cart-count {
+    animation: stew-badge-pop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* ============================================
-   Hero Section
+   Hero Section — Premium
    ============================================ */
 .stew-hero {
     position: relative;
@@ -215,17 +397,29 @@ body.stew-theme {
 .stew-hero__overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1));
     z-index: 1;
 }
 
 .stew-hero__content {
     position: relative;
     z-index: 2;
-    text-align: center;
-    color: var(--stew-white);
-    max-width: 800px;
+    max-width: 600px;
     padding: 2rem;
+}
+
+/* Hero badge pill */
+.stew-hero__badge {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
 }
 
 .stew-hero__title {
@@ -234,7 +428,7 @@ body.stew-theme {
     letter-spacing: var(--stew-letter-spacing-tight);
     margin-bottom: 1.5rem;
     color: var(--stew-white);
-    line-height: 1.15;
+    line-height: 1.1;
 }
 
 @media (min-width: 768px) {
@@ -243,21 +437,34 @@ body.stew-theme {
     }
 }
 
+@media (min-width: 1024px) {
+    .stew-hero__title {
+        font-size: 4rem;
+    }
+}
+
 .stew-hero__subtitle {
     font-size: 1.125rem;
     font-weight: 300;
-    opacity: 0.9;
+    opacity: 0.85;
     margin-bottom: 2rem;
     line-height: 1.6;
+    color: var(--stew-white);
+}
+
+.stew-hero__buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 /* ============================================
-   Category Cards
+   Category Cards — Enhanced
    ============================================ */
 .stew-categories {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 @media (min-width: 640px) {
@@ -275,7 +482,7 @@ body.stew-theme {
 .stew-category-card {
     display: block;
     background: var(--stew-card-bg);
-    border: 1px solid var(--stew-border);
+    border: 1px solid var(--stew-border-subtle);
     border-radius: var(--stew-radius);
     overflow: hidden;
     text-decoration: none;
@@ -285,23 +492,58 @@ body.stew-theme {
 
 .stew-category-card:hover {
     border-color: rgba(201, 169, 110, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 .stew-category-card__image {
     aspect-ratio: 4/3;
     overflow: hidden;
     background: var(--stew-muted-bg);
+    position: relative;
 }
 
 .stew-category-card__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .stew-category-card:hover .stew-category-card__image img {
-    transform: scale(1.05);
+    transform: scale(1.1);
+}
+
+/* Gradient overlay on hover */
+.stew-category-card__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.5), transparent, transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.stew-category-card:hover .stew-category-card__image::after {
+    opacity: 1;
+}
+
+/* Overlay name that slides up on hover */
+.stew-category-card__overlay-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.stew-category-card:hover .stew-category-card__overlay-name {
+    transform: translateY(0);
 }
 
 .stew-category-card__info {
@@ -334,7 +576,7 @@ body.stew-theme {
 }
 
 /* ============================================
-   Product Cards (WooCommerce)
+   Product Cards (WooCommerce) — Premium
    ============================================ */
 .stew-theme .products,
 .stew-product-grid {
@@ -363,9 +605,10 @@ body.stew-theme {
 .stew-product-card,
 .stew-theme ul.products li.product {
     background: var(--stew-card-bg);
+    border: 1px solid var(--stew-border-subtle);
     border-radius: var(--stew-radius);
     overflow: hidden;
-    transition: var(--stew-transition);
+    transition: var(--stew-transition-slow);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -373,8 +616,11 @@ body.stew-theme {
 
 .stew-product-card:hover,
 .stew-theme ul.products li.product:hover {
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
+    border-color: rgba(201, 169, 110, 0.2);
+    box-shadow:
+        0 0 30px -8px rgba(201, 169, 110, 0.15),
+        0 20px 40px -12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
 }
 
 .stew-product-card__image,
@@ -382,12 +628,12 @@ body.stew-theme {
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
-    transition: transform 0.5s ease-out;
+    transition: transform 0.7s ease-out;
 }
 
 .stew-product-card:hover .stew-product-card__image,
 .stew-theme ul.products li.product:hover .attachment-woocommerce_thumbnail {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 .stew-product-card__image-wrap {
@@ -397,8 +643,22 @@ body.stew-theme {
     background: var(--stew-muted-bg);
 }
 
+/* Subtle overlay on hover */
+.stew-product-card__image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 26, 0);
+    transition: background 0.5s ease;
+}
+
+.stew-product-card:hover .stew-product-card__image-wrap::after {
+    background: rgba(26, 26, 26, 0.03);
+}
+
 .stew-product-card__info {
-    padding: 1rem;
+    padding: 1.25rem;
+    position: relative;
 }
 
 .stew-product-card__name,
@@ -406,7 +666,7 @@ body.stew-theme {
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.4;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: var(--stew-text);
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -427,38 +687,60 @@ body.stew-theme {
     color: var(--stew-text);
 }
 
-/* Badges */
+/* Hover arrow indicator */
+.stew-product-card__arrow {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 1rem;
+    height: 1rem;
+    color: var(--stew-text-muted);
+    opacity: 0;
+    transition: var(--stew-transition-slow);
+}
+
+.stew-product-card:hover .stew-product-card__arrow {
+    opacity: 1;
+    color: var(--stew-primary);
+}
+
+/* Badges — Pill style */
 .stew-badge {
     position: absolute;
     top: 0.75rem;
     left: 0.75rem;
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 500;
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--stew-radius);
+    padding: 0.25rem 0.625rem;
+    border-radius: 999px;
     z-index: 2;
 }
 
 .stew-badge--soldout {
-    background-color: var(--stew-badge-soldout);
-    color: var(--stew-text-muted);
+    background-color: rgba(26, 26, 26, 0.8);
+    color: var(--stew-white);
 }
 
 .stew-badge--new {
     background-color: var(--stew-primary);
     color: var(--stew-white);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .stew-theme .woocommerce span.onsale {
     background-color: var(--stew-primary);
     color: var(--stew-white);
-    border-radius: var(--stew-radius);
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
     min-height: auto;
     min-width: auto;
     line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* Price on request */
@@ -471,6 +753,11 @@ body.stew-theme {
 /* ============================================
    Product Archive / Shop Page
    ============================================ */
+.stew-shop-header {
+    background: rgba(245, 245, 242, 0.5);
+    padding: 2rem 0;
+}
+
 .stew-shop-layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -515,6 +802,7 @@ body.stew-theme {
     padding: 1.5rem;
     background: var(--stew-off-white);
     border-radius: var(--stew-radius);
+    border: 1px solid var(--stew-border-subtle);
 }
 
 .stew-filter-sidebar h3,
@@ -609,12 +897,19 @@ body.stew-theme {
 .stew-product-gallery {
     position: sticky;
     top: 120px;
+    overflow: hidden;
+    border-radius: var(--stew-radius);
 }
 
 .stew-product-gallery img {
     width: 100%;
     height: auto;
     border-radius: var(--stew-radius);
+    transition: transform 0.7s ease;
+}
+
+.stew-product-gallery:hover img {
+    transform: scale(1.05);
 }
 
 .stew-product-info__title {
@@ -653,7 +948,7 @@ body.stew-theme {
 }
 
 .stew-product-highlights li::before {
-    content: "✓";
+    content: "\2713";
     color: var(--stew-primary);
     font-weight: 700;
     flex-shrink: 0;
@@ -664,6 +959,8 @@ body.stew-theme {
     width: 100%;
     border-collapse: collapse;
     margin: 2rem 0;
+    border-radius: var(--stew-radius);
+    overflow: hidden;
 }
 
 .stew-specs-table th,
@@ -683,6 +980,10 @@ body.stew-theme {
 
 .stew-specs-table tr:nth-child(even) {
     background: var(--stew-off-white);
+}
+
+.stew-specs-table tr:hover {
+    background: rgba(245, 245, 242, 0.5);
 }
 
 .stew-specs-table tr:last-child th,
@@ -709,6 +1010,7 @@ body.stew-theme {
 .stew-datasheet-btn:hover {
     border-color: var(--stew-primary);
     color: var(--stew-primary);
+    transform: translateY(-1px);
 }
 
 .stew-datasheet-btn svg,
@@ -786,10 +1088,10 @@ body.stew-theme {
 }
 
 /* ============================================
-   Newsletter Section
+   Newsletter Section — Warm Gradient
    ============================================ */
 .stew-newsletter {
-    background: var(--stew-muted-bg);
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.05), transparent, rgba(201, 169, 110, 0.08));
     padding: var(--stew-section-padding-mobile) 0;
     text-align: center;
 }
@@ -801,13 +1103,13 @@ body.stew-theme {
 }
 
 .stew-newsletter__content {
-    max-width: 540px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .stew-newsletter__title {
     font-size: 1.75rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 0.75rem;
 }
 
@@ -826,12 +1128,14 @@ body.stew-theme {
 
 .stew-newsletter-form input[type="email"] {
     flex: 1;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--stew-border);
+    height: 3rem;
+    padding: 0 1rem;
+    border: 1px solid var(--stew-border-subtle);
     border-radius: var(--stew-radius);
     font-family: var(--stew-font);
     font-size: 0.875rem;
     background: var(--stew-white);
+    transition: border-color 0.2s ease;
 }
 
 .stew-newsletter-form input[type="email"]:focus {
@@ -839,21 +1143,123 @@ body.stew-theme {
     border-color: var(--stew-primary);
 }
 
+.stew-newsletter-form .stew-btn {
+    height: 3rem;
+    padding: 0 1.5rem;
+}
+
+.stew-newsletter__privacy {
+    font-size: 0.75rem;
+    color: var(--stew-text-muted);
+    margin-top: 0.75rem;
+}
+
 /* ============================================
-   Footer
+   About Section — Values Cards
+   ============================================ */
+.stew-about-hero {
+    padding: 5rem 0 6rem;
+    background: linear-gradient(to bottom, var(--stew-off-white), var(--stew-white));
+    text-align: center;
+}
+
+.stew-about-hero h1 {
+    font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .stew-about-hero h1 {
+        font-size: 3rem;
+    }
+}
+
+.stew-about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .stew-about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ============================================
+   USP / Values Grid — Card style
+   ============================================ */
+.stew-usp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .stew-usp-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .stew-usp-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.stew-usp-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--stew-card-bg);
+    border: 1px solid var(--stew-border-subtle);
+    border-radius: var(--stew-radius);
+    transition: var(--stew-transition);
+}
+
+.stew-usp-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.stew-usp-item__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--stew-primary-soft);
+    border-radius: 0.75rem;
+    color: var(--stew-primary);
+}
+
+.stew-usp-item__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.stew-usp-item__text {
+    font-size: 0.875rem;
+    color: var(--stew-text-muted);
+    line-height: 1.6;
+}
+
+/* ============================================
+   Footer — Dark Premium
    ============================================ */
 .stew-theme #footer-outer,
 .stew-footer {
     background-color: var(--stew-dark) !important;
     color: var(--stew-white);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
 }
 
 .stew-footer__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 4rem 0;
+    padding: 4rem 0 5rem;
 }
 
 @media (min-width: 768px) {
@@ -865,9 +1271,14 @@ body.stew-theme {
 
 .stew-footer__brand {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: var(--stew-letter-spacing-tight);
     margin-bottom: 1rem;
+    color: var(--stew-white);
+}
+
+.stew-footer__brand .stew-logo-dot {
+    color: var(--stew-primary);
 }
 
 .stew-footer__text {
@@ -877,10 +1288,12 @@ body.stew-theme {
 }
 
 .stew-footer h4 {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--stew-white);
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: var(--stew-letter-spacing-wide);
 }
 
 .stew-footer ul {
@@ -901,15 +1314,19 @@ body.stew-theme {
 }
 
 .stew-footer a:hover {
+    color: var(--stew-white);
+}
+
+.stew-footer .stew-footer__contact-icon {
     color: var(--stew-primary);
 }
 
 .stew-footer__bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 2rem 0;
     text-align: center;
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.3);
 }
 
 /* Salient footer overrides */
@@ -922,18 +1339,18 @@ body.stew-theme {
 }
 
 .stew-theme #footer-outer a:hover {
-    color: var(--stew-primary);
+    color: var(--stew-white);
 }
 
 /* ============================================
-   Contact Form
+   Contact Form — Refined
    ============================================ */
 .stew-form-grid {
     max-width: 640px;
 }
 
 .stew-form-row {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
 .stew-form-row--half {
@@ -974,6 +1391,7 @@ body.stew-theme {
 .stew-form-field textarea:focus {
     outline: none;
     border-color: var(--stew-primary);
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.1);
 }
 
 .stew-form-field textarea {
@@ -981,11 +1399,19 @@ body.stew-theme {
     resize: vertical;
 }
 
+/* Contact info card */
+.stew-contact-info {
+    background: var(--stew-off-white);
+    padding: 1.5rem;
+    border-radius: var(--stew-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
 /* ============================================
    WooCommerce Breadcrumbs
    ============================================ */
 .stew-theme .woocommerce-breadcrumb {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--stew-text-muted);
     margin-bottom: 2rem;
     padding: 0;
@@ -998,6 +1424,10 @@ body.stew-theme {
 
 .stew-theme .woocommerce-breadcrumb a:hover {
     color: var(--stew-primary);
+}
+
+.stew-theme .woocommerce-breadcrumb .breadcrumb-separator {
+    opacity: 0.6;
 }
 
 /* ============================================
@@ -1018,6 +1448,7 @@ body.stew-theme {
     background: var(--stew-off-white);
     padding: 1.5rem;
     border-radius: var(--stew-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 /* ============================================
@@ -1048,15 +1479,18 @@ body.stew-theme {
 .stew-theme .woocommerce-message {
     border-top-color: var(--stew-primary);
     background: var(--stew-primary-soft);
+    border-radius: var(--stew-radius);
 }
 
 .stew-theme .woocommerce-error {
     border-top-color: var(--stew-error);
+    border-radius: var(--stew-radius);
 }
 
 .stew-theme .woocommerce-info {
     border-top-color: var(--stew-primary);
     background: var(--stew-primary-soft);
+    border-radius: var(--stew-radius);
 }
 
 /* ============================================
@@ -1118,7 +1552,7 @@ body.stew-theme {
 .stew-related-products {
     margin-top: 4rem;
     padding-top: 3rem;
-    border-top: 1px solid var(--stew-border);
+    border-top: 1px solid var(--stew-border-subtle);
 }
 
 .stew-related-products h2 {
@@ -1131,58 +1565,37 @@ body.stew-theme {
 }
 
 /* ============================================
-   About Section
+   Glassmorphism Utility
    ============================================ */
-.stew-about-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-@media (min-width: 768px) {
-    .stew-about-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+.stew-glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--stew-border-subtle);
 }
 
 /* ============================================
-   USP / Values Grid
+   Hover Lift Utility
    ============================================ */
-.stew-usp-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+.stew-hover-lift {
+    transition: var(--stew-transition);
 }
 
-@media (min-width: 768px) {
-    .stew-usp-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.stew-hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.stew-usp-item {
-    text-align: center;
-    padding: 2rem;
+/* ============================================
+   Focus Accessibility
+   ============================================ */
+*:focus-visible {
+    outline: 2px solid var(--stew-primary);
+    outline-offset: 2px;
 }
 
-.stew-usp-item__icon {
-    width: 3rem;
-    height: 3rem;
-    margin: 0 auto 1.5rem;
-    color: var(--stew-primary);
-}
-
-.stew-usp-item__title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-}
-
-.stew-usp-item__text {
-    font-size: 0.875rem;
-    color: var(--stew-text-muted);
-    line-height: 1.6;
+*:focus:not(:focus-visible) {
+    outline: none;
 }
 
 /* ============================================
@@ -1192,6 +1605,7 @@ body.stew-theme {
 .stew-text-muted { color: var(--stew-text-muted); }
 .stew-bg-muted { background-color: var(--stew-muted-bg); }
 .stew-bg-dark { background-color: var(--stew-dark); color: var(--stew-white); }
+.stew-bg-gradient-warm { background: linear-gradient(to bottom, rgba(201, 169, 110, 0.04), rgba(201, 169, 110, 0.02)); }
 .stew-mt-0 { margin-top: 0; }
 .stew-mb-0 { margin-bottom: 0; }
 .stew-mb-1 { margin-bottom: 1rem; }

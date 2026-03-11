@@ -274,42 +274,64 @@ function stew_body_classes( $classes ) {
 add_filter( 'body_class', 'stew_body_classes' );
 
 /**
+ * Dimming type labels
+ */
+function stew_dimming_label( $value ) {
+    $labels = array(
+        'not_dimmable' => 'Nicht dimmbar (ON/OFF)',
+        'dali'         => 'DALI / DALI 2 dimmbar',
+        '1_10v'        => '1-10V dimmbar',
+        'casambi'      => 'Casambi BLE',
+        'touchdim'     => 'TouchDIM',
+        'nfc'          => 'NFC programmierbar',
+        'one4all'      => 'one4all',
+        'zigbee'       => 'Zigbee',
+    );
+    return isset( $labels[ $value ] ) ? $labels[ $value ] : $value;
+}
+
+/**
  * Product page: Add highlights box after add-to-cart
  */
 function stew_product_highlights() {
     global $product;
     $pid = $product->get_id();
 
-    $power      = get_post_meta( $pid, 'power_watts', true );
-    $ip         = get_post_meta( $pid, 'ip_protection', true );
-    $dimming    = get_post_meta( $pid, 'dimming_type', true );
-    $voltage    = get_post_meta( $pid, 'input_voltage', true );
-    $sku        = $product->get_sku();
+    $power   = get_post_meta( $pid, 'power_watts', true );
+    $ip      = get_post_meta( $pid, 'ip_protection', true );
+    $dimming = get_post_meta( $pid, 'dimming_type', true );
+    $voltage = get_post_meta( $pid, 'input_voltage', true );
+    $sku     = $product->get_sku();
 
     $items = array();
-    if ( $power )   $items[] = $power . ' Watt Leistung';
+    if ( $power )   $items[] = $power . 'W Leistung';
     if ( $ip )      $items[] = 'Schutzart ' . $ip;
-    if ( $dimming ) $items[] = is_array( $dimming ) ? implode( ', ', $dimming ) : $dimming;
+    if ( $dimming ) {
+        if ( is_array( $dimming ) ) {
+            $items[] = implode( ', ', array_map( 'stew_dimming_label', $dimming ) );
+        } else {
+            $items[] = stew_dimming_label( $dimming );
+        }
+    }
     if ( $voltage ) $items[] = $voltage;
     if ( $sku )     $items[] = 'Art.-Nr.: ' . $sku;
 
     if ( empty( $items ) ) return;
 
-    echo '<div class="stew-product-highlights" style="margin-top:1.5rem;padding:1.5rem;background:#F8F8F8;border-radius:2px;">';
-    echo '<ul style="list-style:none;padding:0;margin:0;">';
+    echo '<div class="stew-product-highlights">';
     foreach ( $items as $item ) {
-        echo '<li style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.4rem 0;font-size:0.875rem;">';
-        echo '<span style="color:#C9A96E;font-weight:700;flex-shrink:0;">&#10003;</span>';
-        echo esc_html( $item );
-        echo '</li>';
+        echo '<div style="display:flex;align-items:center;gap:0.5rem;padding:0.35rem 0;font-size:0.875rem;">';
+        echo '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        echo '<span>' . esc_html( $item ) . '</span>';
+        echo '</div>';
     }
-    echo '</ul></div>';
+    echo '</div>';
 
     // Datasheet button
     $datasheet = get_post_meta( $pid, 'datasheet_pdf', true );
     if ( $datasheet ) {
         echo '<div style="margin-top:1rem;">';
-        echo '<a href="' . esc_url( $datasheet ) . '" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:#F8F8F8;border:1px solid #E8E5E0;border-radius:2px;font-size:0.875rem;font-weight:500;color:#1A1A1A;text-decoration:none;">';
+        echo '<a href="' . esc_url( $datasheet ) . '" target="_blank" rel="noopener" class="stew-datasheet-btn">';
         echo esc_html__( 'Datenblatt herunterladen', 'stew-child' );
         echo '</a></div>';
     }
@@ -328,11 +350,88 @@ function stew_product_manufacturer() {
 add_action( 'woocommerce_single_product_summary', 'stew_product_manufacturer', 6 );
 
 /**
- * Related products: show 4 in one row
+ * Related products: show 3 in one row
  */
 function stew_related_products_args( $args ) {
-    $args['posts_per_page'] = 4;
-    $args['columns']        = 4;
+    $args['posts_per_page'] = 3;
+    $args['columns']        = 3;
     return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', 'stew_related_products_args' );
+
+/**
+ * Add Technische Spezifikationen tab to WooCommerce product tabs
+ */
+function stew_product_specs_tab( $tabs ) {
+    global $product;
+    if ( ! $product ) return $tabs;
+
+    $pid   = $product->get_id();
+    $power = get_post_meta( $pid, 'power_watts', true );
+    $ip    = get_post_meta( $pid, 'ip_protection', true );
+
+    // Only add tab if product has specs
+    if ( $power || $ip ) {
+        $tabs['stew_specs'] = array(
+            'title'    => __( 'Technische Daten', 'stew-child' ),
+            'priority' => 15,
+            'callback' => 'stew_product_specs_tab_content',
+        );
+    }
+    return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'stew_product_specs_tab' );
+
+function stew_product_specs_tab_content() {
+    global $product;
+    $pid = $product->get_id();
+
+    $fields = array(
+        'cc_cv_type'           => 'CC/CV Typ',
+        'power_watts'          => 'Leistung',
+        'output_current_ma'    => 'Ausgangsstrom',
+        'output_channels'      => 'Ausgangskanäle',
+        'ip_protection'        => 'IP-Schutzart',
+        'input_voltage'        => 'Eingangsspannung',
+        'series_type'          => 'Serien-Typ',
+        'manufacturer_brand'   => 'Hersteller',
+        'manufacturer_part_number' => 'Hersteller-Art.-Nr.',
+    );
+
+    // Add dimensions if available
+    $dim_l = get_post_meta( $pid, 'dimensions_length_mm', true );
+    $dim_w = get_post_meta( $pid, 'dimensions_width_mm', true );
+    $dim_h = get_post_meta( $pid, 'dimensions_height_mm', true );
+
+    echo '<table class="stew-specs-table" style="width:100%;border-collapse:collapse;">';
+    echo '<tbody>';
+    foreach ( $fields as $key => $label ) {
+        $val = get_post_meta( $pid, $key, true );
+        if ( empty( $val ) ) continue;
+        if ( is_array( $val ) ) {
+            $val = implode( ', ', array_map( 'stew_dimming_label', $val ) );
+        }
+        if ( $key === 'power_watts' ) $val .= ' W';
+        echo '<tr>';
+        echo '<th style="padding:0.75rem 1rem;font-size:0.875rem;font-weight:500;color:#737373;text-align:left;width:40%;border-bottom:1px solid #E8E5E0;">' . esc_html( $label ) . '</th>';
+        echo '<td style="padding:0.75rem 1rem;font-size:0.875rem;border-bottom:1px solid #E8E5E0;">' . esc_html( $val ) . '</td>';
+        echo '</tr>';
+    }
+    // Dimensions row
+    if ( $dim_l && $dim_w && $dim_h ) {
+        echo '<tr>';
+        echo '<th style="padding:0.75rem 1rem;font-size:0.875rem;font-weight:500;color:#737373;text-align:left;width:40%;border-bottom:1px solid #E8E5E0;">Abmessungen (L×B×H)</th>';
+        echo '<td style="padding:0.75rem 1rem;font-size:0.875rem;border-bottom:1px solid #E8E5E0;">' . esc_html( $dim_l . ' × ' . $dim_w . ' × ' . $dim_h . ' mm' ) . '</td>';
+        echo '</tr>';
+    }
+    // Dimming
+    $dimming = get_post_meta( $pid, 'dimming_type', true );
+    if ( $dimming ) {
+        $dim_val = is_array( $dimming ) ? implode( ', ', array_map( 'stew_dimming_label', $dimming ) ) : stew_dimming_label( $dimming );
+        echo '<tr>';
+        echo '<th style="padding:0.75rem 1rem;font-size:0.875rem;font-weight:500;color:#737373;text-align:left;width:40%;border-bottom:1px solid #E8E5E0;">Dimmung</th>';
+        echo '<td style="padding:0.75rem 1rem;font-size:0.875rem;border-bottom:1px solid #E8E5E0;">' . esc_html( $dim_val ) . '</td>';
+        echo '</tr>';
+    }
+    echo '</tbody></table>';
+}
