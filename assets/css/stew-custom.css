@@ -58,26 +58,52 @@ html {
     scroll-behavior: smooth;
 }
 
-body.stew-theme {
-    font-family: var(--stew-font);
-    color: var(--stew-text);
-    background-color: var(--stew-white);
+body.stew-theme,
+body.stew-theme #ajax-content-wrap,
+body.stew-theme .container-wrap,
+body.stew-theme .main-content {
+    font-family: var(--stew-font) !important;
+    color: var(--stew-text) !important;
+    background-color: var(--stew-white) !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.6;
+    line-height: 1.6 !important;
 }
 
-.stew-theme h1,
-.stew-theme h2,
-.stew-theme h3,
-.stew-theme h4,
-.stew-theme h5,
-.stew-theme h6 {
-    font-family: var(--stew-font);
-    font-weight: 600;
-    letter-spacing: var(--stew-letter-spacing-tight);
-    color: var(--stew-text);
-    line-height: 1.2;
+body.stew-theme h1,
+body.stew-theme h2,
+body.stew-theme h3,
+body.stew-theme h4,
+body.stew-theme h5,
+body.stew-theme h6,
+body.stew-theme .wpb_wrapper h1,
+body.stew-theme .wpb_wrapper h2,
+body.stew-theme .wpb_wrapper h3,
+body.stew-theme .wpb_wrapper h4,
+body.stew-theme .nectar-fancy-box h2,
+body.stew-theme .nectar-fancy-box h3,
+body.stew-theme .vc_column_container h2,
+body.stew-theme .vc_column_container h3 {
+    font-family: var(--stew-font) !important;
+    font-weight: 600 !important;
+    letter-spacing: var(--stew-letter-spacing-tight) !important;
+    color: var(--stew-text) !important;
+    line-height: 1.2 !important;
+}
+
+/* Force Inter font on all Salient text elements */
+body.stew-theme p,
+body.stew-theme a,
+body.stew-theme span,
+body.stew-theme li,
+body.stew-theme input,
+body.stew-theme button,
+body.stew-theme select,
+body.stew-theme textarea,
+body.stew-theme .wpb_text_column,
+body.stew-theme .nectar-cta,
+body.stew-theme .wpb_content_element {
+    font-family: var(--stew-font) !important;
 }
 
 .stew-section-heading {
@@ -213,43 +239,46 @@ body.stew-theme {
    Buttons
    ============================================ */
 .stew-btn,
-.stew-theme .button,
-.stew-theme .woocommerce a.button,
-.stew-theme .woocommerce button.button,
-.stew-theme .woocommerce input.button {
-    display: inline-flex;
+body.stew-theme .button,
+body.stew-theme .woocommerce a.button,
+body.stew-theme .woocommerce button.button,
+body.stew-theme .woocommerce input.button,
+body.stew-theme a.nectar-button,
+body.stew-theme .nectar-button {
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.5rem;
-    font-family: var(--stew-font);
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 0.02em;
-    border: none;
-    border-radius: var(--stew-radius);
+    padding: 0.75rem 1.5rem !important;
+    font-family: var(--stew-font) !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    letter-spacing: 0.02em !important;
+    border: none !important;
+    border-radius: var(--stew-radius) !important;
     cursor: pointer;
-    transition: var(--stew-transition);
-    text-decoration: none;
+    transition: var(--stew-transition) !important;
+    text-decoration: none !important;
     line-height: 1.4;
 }
 
 .stew-btn--primary,
-.stew-theme .woocommerce a.button.alt,
-.stew-theme .woocommerce button.button.alt,
-.stew-theme .woocommerce input.button.alt {
-    background-color: var(--stew-dark);
-    color: var(--stew-white);
+body.stew-theme .woocommerce a.button.alt,
+body.stew-theme .woocommerce button.button.alt,
+body.stew-theme .woocommerce input.button.alt,
+body.stew-theme a.nectar-button[data-color-override] {
+    background-color: var(--stew-dark) !important;
+    color: var(--stew-white) !important;
 }
 
 .stew-btn--primary:hover,
-.stew-theme .woocommerce a.button.alt:hover,
-.stew-theme .woocommerce button.button.alt:hover,
-.stew-theme .woocommerce input.button.alt:hover {
-    background-color: var(--stew-dark-lighter);
-    color: var(--stew-white);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+body.stew-theme .woocommerce a.button.alt:hover,
+body.stew-theme .woocommerce button.button.alt:hover,
+body.stew-theme .woocommerce input.button.alt:hover {
+    background-color: var(--stew-dark-lighter) !important;
+    color: var(--stew-white) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 .stew-btn--outline {
@@ -288,11 +317,13 @@ body.stew-theme {
 /* ============================================
    Navigation / Header — Frosted Glass
    ============================================ */
-.stew-theme #header-outer {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--stew-border-subtle);
+body.stew-theme #header-outer,
+body.stew-theme #header-outer.transparent,
+body.stew-theme #header-outer[data-header-color] {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid var(--stew-border-subtle) !important;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
@@ -309,14 +340,17 @@ body.stew-theme {
     color: var(--stew-primary);
 }
 
-.stew-theme #header-outer .nav-menu > li > a {
-    font-family: var(--stew-font);
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--stew-text);
-    letter-spacing: 0.02em;
-    transition: color 0.3s ease;
+body.stew-theme #header-outer .sf-menu > li > a,
+body.stew-theme #header-outer .nav-menu > li > a,
+body.stew-theme #header-outer header#top nav > ul > li > a {
+    font-family: var(--stew-font) !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    color: var(--stew-text) !important;
+    letter-spacing: 0.02em !important;
+    transition: color 0.3s ease !important;
     position: relative;
+    text-transform: none !important;
 }
 
 /* Animated underline on nav links */
@@ -603,24 +637,28 @@ body.stew-theme {
 }
 
 .stew-product-card,
-.stew-theme ul.products li.product {
-    background: var(--stew-card-bg);
-    border: 1px solid var(--stew-border-subtle);
-    border-radius: var(--stew-radius);
-    overflow: hidden;
-    transition: var(--stew-transition-slow);
+body.stew-theme ul.products li.product,
+body.stew-theme .woocommerce ul.products li.product,
+body.stew-theme .products .product.material {
+    background: var(--stew-card-bg) !important;
+    border: 1px solid var(--stew-border-subtle) !important;
+    border-radius: var(--stew-radius) !important;
+    overflow: hidden !important;
+    transition: var(--stew-transition-slow) !important;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .stew-product-card:hover,
-.stew-theme ul.products li.product:hover {
-    border-color: rgba(201, 169, 110, 0.2);
+body.stew-theme ul.products li.product:hover,
+body.stew-theme .woocommerce ul.products li.product:hover,
+body.stew-theme .products .product.material:hover {
+    border-color: rgba(201, 169, 110, 0.2) !important;
     box-shadow:
         0 0 30px -8px rgba(201, 169, 110, 0.15),
-        0 20px 40px -12px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px);
+        0 20px 40px -12px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-4px) !important;
 }
 
 .stew-product-card__image,
@@ -662,12 +700,14 @@ body.stew-theme {
 }
 
 .stew-product-card__name,
-.stew-theme ul.products li.product .woocommerce-loop-product__title {
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 1.4;
-    margin-bottom: 0.75rem;
-    color: var(--stew-text);
+body.stew-theme ul.products li.product .woocommerce-loop-product__title,
+body.stew-theme ul.products li.product .product-wrap h2,
+body.stew-theme ul.products li.product h2 {
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.75rem !important;
+    color: var(--stew-text) !important;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -676,15 +716,17 @@ body.stew-theme {
 }
 
 .stew-product-card:hover .stew-product-card__name,
-.stew-theme ul.products li.product:hover .woocommerce-loop-product__title {
-    color: var(--stew-primary);
+body.stew-theme ul.products li.product:hover .woocommerce-loop-product__title,
+body.stew-theme ul.products li.product:hover h2 {
+    color: var(--stew-primary) !important;
 }
 
 .stew-product-card__price,
-.stew-theme ul.products li.product .price {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--stew-text);
+body.stew-theme ul.products li.product .price,
+body.stew-theme ul.products li.product .price .woocommerce-Price-amount {
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    color: var(--stew-text) !important;
 }
 
 /* Hover arrow indicator */
@@ -1651,6 +1693,238 @@ body.stew-theme {
 .stew-theme .woocommerce-MyAccount-navigation ul li a:hover {
     background: var(--stew-off-white);
     color: var(--stew-primary);
+}
+
+/* ============================================
+   SALIENT THEME OVERRIDES — High Specificity
+   These override Salient's built-in styles that
+   use high specificity selectors & inline styles
+   ============================================ */
+
+/* --- Global Salient containers --- */
+body.stew-theme .container-wrap,
+body.stew-theme #ajax-content-wrap .container-wrap,
+body.stew-theme .container-wrap .main-content {
+    background-color: var(--stew-white) !important;
+}
+
+body.stew-theme .wpb_row,
+body.stew-theme .vc_row {
+    font-family: var(--stew-font) !important;
+}
+
+/* --- Salient WooCommerce product grid --- */
+body.stew-theme .woocommerce .products .product .product-wrap,
+body.stew-theme .woocommerce ul.products li.product .product-wrap {
+    background: var(--stew-card-bg) !important;
+    border-radius: var(--stew-radius) !important;
+    overflow: hidden !important;
+}
+
+body.stew-theme .woocommerce ul.products li.product .background-color-expand {
+    background-color: var(--stew-card-bg) !important;
+    border-radius: var(--stew-radius) !important;
+}
+
+/* Product image hover zoom */
+body.stew-theme .woocommerce ul.products li.product .product-wrap img,
+body.stew-theme .woocommerce ul.products li.product img.wp-post-image {
+    transition: transform 0.7s ease-out !important;
+}
+
+body.stew-theme .woocommerce ul.products li.product:hover .product-wrap img,
+body.stew-theme .woocommerce ul.products li.product:hover img.wp-post-image {
+    transform: scale(1.05) !important;
+}
+
+/* Product title in Salient grid */
+body.stew-theme .woocommerce ul.products li.product h2,
+body.stew-theme .woocommerce ul.products li.product .product-wrap h2,
+body.stew-theme .woocommerce ul.products li.product .woocommerce-loop-product__title,
+body.stew-theme ul.products li.product.material h2 {
+    font-family: var(--stew-font) !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    color: var(--stew-text) !important;
+    transition: color 0.2s ease !important;
+}
+
+body.stew-theme .woocommerce ul.products li.product:hover h2 {
+    color: var(--stew-primary) !important;
+}
+
+/* Product price in Salient grid */
+body.stew-theme .woocommerce ul.products li.product .price,
+body.stew-theme .woocommerce ul.products li.product .price .amount,
+body.stew-theme .woocommerce ul.products li.product .price .woocommerce-Price-amount {
+    font-family: var(--stew-font) !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    color: var(--stew-text) !important;
+}
+
+/* Salient product badges */
+body.stew-theme .woocommerce ul.products li.product span.onsale,
+body.stew-theme .woocommerce span.onsale {
+    background-color: var(--stew-primary) !important;
+    color: var(--stew-white) !important;
+    border-radius: 999px !important;
+    font-size: 0.6875rem !important;
+    font-weight: 600 !important;
+    padding: 0.25rem 0.625rem !important;
+    min-height: auto !important;
+    min-width: auto !important;
+    line-height: 1.4 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* --- Salient header nav specifics --- */
+body.stew-theme header#top nav > ul > li > a,
+body.stew-theme #header-outer nav > ul > li > a,
+body.stew-theme #header-outer .sf-menu > li > a,
+body.stew-theme #header-outer[data-lhe="animated_underline"] .sf-menu > li > a {
+    font-family: var(--stew-font) !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    text-transform: none !important;
+    letter-spacing: 0.02em !important;
+}
+
+/* Salient header logo */
+body.stew-theme #header-outer #logo img {
+    max-height: 40px !important;
+}
+
+/* --- Salient footer --- */
+body.stew-theme #footer-outer,
+body.stew-theme #footer-outer #nectar_fullscreen_rows > .wpb_row,
+body.stew-theme #footer-outer .row {
+    background-color: var(--stew-dark) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.stew-theme #footer-outer h4,
+body.stew-theme #footer-outer .widget h4 {
+    font-family: var(--stew-font) !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: var(--stew-letter-spacing-wide) !important;
+    color: var(--stew-white) !important;
+}
+
+body.stew-theme #footer-outer a {
+    color: rgba(255, 255, 255, 0.6) !important;
+    transition: color 0.2s ease !important;
+}
+
+body.stew-theme #footer-outer a:hover {
+    color: var(--stew-white) !important;
+}
+
+body.stew-theme #footer-outer .widget li {
+    font-size: 0.875rem !important;
+}
+
+body.stew-theme #copyright {
+    background-color: var(--stew-dark) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* --- Salient WPBakery overrides --- */
+body.stew-theme .wpb_text_column p,
+body.stew-theme .wpb_text_column {
+    font-family: var(--stew-font) !important;
+    color: var(--stew-text) !important;
+}
+
+body.stew-theme .nectar-fancy-box,
+body.stew-theme .vc_column-inner {
+    font-family: var(--stew-font) !important;
+}
+
+/* --- Salient single product page --- */
+body.stew-theme .woocommerce div.product .product_title,
+body.stew-theme .woocommerce div.product h1 {
+    font-family: var(--stew-font) !important;
+    font-weight: 600 !important;
+    color: var(--stew-text) !important;
+}
+
+body.stew-theme .woocommerce div.product p.price,
+body.stew-theme .woocommerce div.product span.price {
+    font-family: var(--stew-font) !important;
+    font-weight: 600 !important;
+    color: var(--stew-text) !important;
+}
+
+body.stew-theme .woocommerce div.product .woocommerce-product-details__short-description {
+    font-family: var(--stew-font) !important;
+    color: var(--stew-text-muted) !important;
+    line-height: 1.7 !important;
+}
+
+/* Salient Add to Cart button */
+body.stew-theme .woocommerce div.product form.cart .button,
+body.stew-theme .woocommerce div.product .single_add_to_cart_button {
+    background-color: var(--stew-dark) !important;
+    color: var(--stew-white) !important;
+    border-radius: var(--stew-radius) !important;
+    font-family: var(--stew-font) !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    letter-spacing: 0.02em !important;
+    padding: 0.75rem 2rem !important;
+    transition: var(--stew-transition) !important;
+}
+
+body.stew-theme .woocommerce div.product form.cart .button:hover {
+    background-color: var(--stew-dark-lighter) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* --- Salient form inputs --- */
+body.stew-theme input[type="text"],
+body.stew-theme input[type="email"],
+body.stew-theme input[type="tel"],
+body.stew-theme input[type="password"],
+body.stew-theme input[type="number"],
+body.stew-theme input[type="search"],
+body.stew-theme select,
+body.stew-theme textarea {
+    font-family: var(--stew-font) !important;
+    border: 1px solid var(--stew-border) !important;
+    border-radius: var(--stew-radius) !important;
+    padding: 0.75rem 1rem !important;
+    transition: border-color 0.2s ease !important;
+}
+
+body.stew-theme input[type="text"]:focus,
+body.stew-theme input[type="email"]:focus,
+body.stew-theme input[type="tel"]:focus,
+body.stew-theme input[type="password"]:focus,
+body.stew-theme input[type="number"]:focus,
+body.stew-theme input[type="search"]:focus,
+body.stew-theme select:focus,
+body.stew-theme textarea:focus {
+    outline: none !important;
+    border-color: var(--stew-primary) !important;
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.1) !important;
+}
+
+/* --- Salient slide-out menu --- */
+body.stew-theme #slide-out-widget-area,
+body.stew-theme #slide-out-widget-area-bg {
+    font-family: var(--stew-font) !important;
+}
+
+body.stew-theme #slide-out-widget-area .off-canvas-menu-container li a {
+    font-family: var(--stew-font) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
 }
 
 /* ============================================
