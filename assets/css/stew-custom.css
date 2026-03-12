@@ -60,7 +60,7 @@ body.stew-theme #ajax-content-wrap,
 body.stew-theme .container-wrap,
 body.stew-theme .main-content {
     font-family: var(--stew-font) !important;
-    color: var(--stew-text) !important;
+    color: var(--stew-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6 !important;
@@ -87,7 +87,7 @@ body.stew-theme .vc_column_container h3 {
     font-family: var(--stew-font) !important;
     font-weight: 600 !important;
     letter-spacing: var(--stew-letter-spacing-tight) !important;
-    color: var(--stew-text) !important;
+    color: var(--stew-text);
     line-height: 1.2 !important;
 }
 
@@ -1842,7 +1842,7 @@ body.stew-theme #copyright {
 body.stew-theme .wpb_text_column p,
 body.stew-theme .wpb_text_column {
     font-family: var(--stew-font) !important;
-    color: var(--stew-text) !important;
+    color: var(--stew-text);
 }
 
 body.stew-theme .nectar-fancy-box,
@@ -1930,6 +1930,14 @@ body.stew-theme #slide-out-widget-area .off-canvas-menu-container li a {
     font-family: var(--stew-font) !important;
     font-weight: 500 !important;
     letter-spacing: 0.02em !important;
+}
+
+/* ============================================
+   Homepage Hero Banner Fix
+   Show bottom of hero image instead of center crop
+   ============================================ */
+body.stew-theme .container-wrap div[style*="hero-lighting"] {
+    background-position: center bottom !important;
 }
 
 /* ============================================
