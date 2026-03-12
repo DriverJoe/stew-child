@@ -1934,10 +1934,18 @@ body.stew-theme #slide-out-widget-area .off-canvas-menu-container li a {
 
 /* ============================================
    Homepage Hero Banner Fix
-   Show bottom of hero image instead of center crop
    ============================================ */
 body.stew-theme .container-wrap div[style*="hero-lighting"] {
     background-position: center bottom !important;
+}
+/* Force white text inside the hero banner */
+body.stew-theme div[style*="hero-lighting"] h1,
+body.stew-theme div[style*="hero-lighting"] p,
+body.stew-theme div[style*="hero-lighting"] a:not(.stew-btn) {
+    color: #ffffff !important;
+}
+body.stew-theme div[style*="hero-lighting"] p {
+    color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* ============================================
